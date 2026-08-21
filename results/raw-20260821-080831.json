@@ -1,0 +1,94 @@
+{
+ "generated": "20260821-080831",
+ "models": [
+  {
+   "provider": "anthropic",
+   "model": "claude-haiku-4-5",
+   "label": "Claude Haiku 4.5",
+   "usd_per_mtok_in": 1.0,
+   "usd_per_mtok_out": 5.0
+  }
+ ],
+ "results": [
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1043.012582929805,
+   "in_tokens": 1120,
+   "out_tokens": 54
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 932.2439581155777,
+   "in_tokens": 1118,
+   "out_tokens": 72
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1089.818375185132,
+   "in_tokens": 1123,
+   "out_tokens": 73
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "text": "```json\n{\n  \"invoice_id\": \"INV-2041\",\n  \"vendor\": \"ACME GmbH\",\n  \"date\": \"2026-07-03\",\n  \"items\": [\n    {\n      \"name\": \"Widget A\",\n      \"qty\": 3,\n      \"unit_price\": 19.90\n    },\n    {\n      \"name\": \"Widget B\",\n      \"qty\": 1,\n      \"unit_price\": 4.50\n    }\n  ]\n}\n```",
+   "latency_ms": 1051.824124995619,
+   "in_tokens": 264,
+   "out_tokens": 128
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "text": "```json\n{\n  \"category\": \"performance\",\n  \"urgency\": \"high\",\n  \"confidence\": 0.95\n}\n```",
+   "latency_ms": 791.6610839311033,
+   "in_tokens": 178,
+   "out_tokens": 37
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "text": "```json\n{\n  \"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\",\n  \"email\": \"jose.mueller@uni-berlin.de\",\n  \"phone\": \"+49 30 1234567\"\n}\n```",
+   "latency_ms": 712.9824999719858,
+   "in_tokens": 163,
+   "out_tokens": 61
+  }
+ ]
+}

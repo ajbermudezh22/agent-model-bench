@@ -1,0 +1,13 @@
+[project]
+name = "agent-model-bench"
+version = "0.1.0"
+description = "Which model should power your agent? Tool-calling and JSON-adherence benchmark with cost and latency."
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=1.0",
+    "httpx>=0.27",
+    "jsonschema>=4.23",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]

@@ -1,0 +1,4007 @@
+{
+ "raw": "raw-full.json",
+ "summary": {
+  "claude-opus-5": {
+   "label": "Claude Opus 5",
+   "tool_calling": {
+    "pass": 20,
+    "total": 20,
+    "median_latency_ms": 2354
+   },
+   "json_adherence": {
+    "pass": 12,
+    "total": 12,
+    "median_latency_ms": 2089,
+    "content_ok": 12
+   },
+   "in_tokens": 25525,
+   "out_tokens": 3620,
+   "run_cost_usd": 0.2181,
+   "errors": 0
+  },
+  "claude-sonnet-5": {
+   "label": "Claude Sonnet 5",
+   "tool_calling": {
+    "pass": 19,
+    "total": 20,
+    "median_latency_ms": 2193
+   },
+   "json_adherence": {
+    "pass": 12,
+    "total": 12,
+    "median_latency_ms": 1626,
+    "content_ok": 12
+   },
+   "in_tokens": 26885,
+   "out_tokens": 3329,
+   "run_cost_usd": 0.1306,
+   "errors": 0
+  },
+  "claude-haiku-4-5": {
+   "label": "Claude Haiku 4.5",
+   "tool_calling": {
+    "pass": 19,
+    "total": 20,
+    "median_latency_ms": 1301
+   },
+   "json_adherence": {
+    "pass": 1,
+    "total": 12,
+    "median_latency_ms": 808,
+    "content_ok": 12
+   },
+   "in_tokens": 24666,
+   "out_tokens": 2670,
+   "run_cost_usd": 0.038,
+   "errors": 0
+  },
+  "gemini-2.5-pro": {
+   "label": "Gemini 2.5 Pro",
+   "tool_calling": {
+    "pass": 0,
+    "total": 20,
+    "median_latency_ms": null
+   },
+   "json_adherence": {
+    "pass": 0,
+    "total": 12,
+    "median_latency_ms": null,
+    "content_ok": 0
+   },
+   "in_tokens": 0,
+   "out_tokens": 0,
+   "run_cost_usd": null,
+   "errors": 32
+  },
+  "gemini-3.7-flash": {
+   "label": "Gemini 3.7 Flash",
+   "tool_calling": {
+    "pass": 6,
+    "total": 20,
+    "median_latency_ms": 5074
+   },
+   "json_adherence": {
+    "pass": 2,
+    "total": 12,
+    "median_latency_ms": 6832,
+    "content_ok": 2
+   },
+   "in_tokens": 3441,
+   "out_tokens": 224,
+   "run_cost_usd": null,
+   "errors": 24
+  },
+  "gemini-3.5-flash-lite": {
+   "label": "Gemini 3.5 Flash Lite",
+   "tool_calling": {
+    "pass": 16,
+    "total": 20,
+    "median_latency_ms": 2269
+   },
+   "json_adherence": {
+    "pass": 3,
+    "total": 12,
+    "median_latency_ms": 858,
+    "content_ok": 3
+   },
+   "in_tokens": 9234,
+   "out_tokens": 639,
+   "run_cost_usd": null,
+   "errors": 12
+  }
+ },
+ "cases": [
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "I'll check the current weather in Berlin for you.",
+   "latency_ms": 2224.838458932936,
+   "in_tokens": 1116,
+   "out_tokens": 92,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "I'll check that for you.",
+   "latency_ms": 2147.061499999836,
+   "in_tokens": 1118,
+   "out_tokens": 86,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2058.2071249373257,
+   "in_tokens": 1122,
+   "out_tokens": 94,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "BER",
+      "destination": "LIS",
+      "date": "2026-09-15"
+     }
+    }
+   ],
+   "text": "I'll search for flights from Berlin (BER) to Lisbon (LIS) on that date.",
+   "latency_ms": 4417.409457964823,
+   "in_tokens": 1127,
+   "out_tokens": 132,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "FRA",
+      "destination": "JFK",
+      "date": "2026-10-03",
+      "max_stops": 0
+     }
+    }
+   ],
+   "text": "I'll search for that flight.",
+   "latency_ms": 2412.294042063877,
+   "in_tokens": 1136,
+   "out_tokens": 135,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "calls": [
+    {
+     "tool": "create_reminder",
+     "args": {
+      "text": "Call mom",
+      "at": "2026-09-03T18:00"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2222.3694580607116,
+   "in_tokens": 1125,
+   "out_tokens": 104,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "shipped",
+      "min_total": 50,
+      "limit": 10
+     }
+    }
+   ],
+   "text": "I'll query the orders database for you.",
+   "latency_ms": 2420.558250043541,
+   "in_tokens": 1125,
+   "out_tokens": 107,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "customer_email": "jane@example.com",
+      "status": "cancelled"
+     }
+    }
+   ],
+   "text": "I'll query the orders database with those filters.",
+   "latency_ms": 1919.0182089805603,
+   "in_tokens": 1121,
+   "out_tokens": 94,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 250,
+      "from_currency": "USD",
+      "to_currency": "EUR"
+     }
+    }
+   ],
+   "text": "I'll convert that for you.",
+   "latency_ms": 2035.8147909864783,
+   "in_tokens": 1116,
+   "out_tokens": 111,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 3500,
+      "from_currency": "JPY",
+      "to_currency": "CHF"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2391.14479185082,
+   "in_tokens": 1121,
+   "out_tokens": 124,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "calls": [],
+   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that it's Sydney or Melbourne \u2014 Canberra was purpose-built as a compromise between those two rival cities and became the capital in 1913. It's located in the Australian Capital Territory, roughly halfway between them.",
+   "latency_ms": 2314.0848339535296,
+   "in_tokens": 1112,
+   "out_tokens": 95,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "calls": [],
+   "text": "100 \u00b0F is about **37.8 \u00b0C**.\n\nThe conversion formula is (\u00b0F \u2212 32) \u00d7 5/9, so (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78 \u00b0C \u2014 which happens to be right around normal human body temperature.",
+   "latency_ms": 2878.6603331100196,
+   "in_tokens": 1122,
+   "out_tokens": 151,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "calls": [],
+   "text": "I can't book flights directly, but I can search available options for you. I just need a couple of details:\n\n1. **Departure airport** \u2014 which city/airport are you flying from? (e.g., BER, LHR, JFK)\n2. **Date** \u2014 what day do you want to depart?\n3. **Stops** \u2014 any limit, or is a connection fine?\n\nAlso, Tokyo has two main airports \u2014 Haneda (HND) is closer to the city, Narita (NRT) often has cheaper fares. Let me know if you have a preference, otherwise I'll check both.",
+   "latency_ms": 4505.106541793793,
+   "in_tokens": 1115,
+   "out_tokens": 257,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "calls": [],
+   "text": "I'm not able to do that \u2014 none of my available tools can modify or cancel an order. I can only *read* order data (filtered by customer email, status, minimum total), plus handle weather, flights, reminders, and currency conversion.\n\nA couple of things I can help with instead:\n\n- **Look up your pending orders** so you have the details handy \u2014 though I'd need your customer email, since I can't search by order number directly.\n- **Set a reminder** to follow up on the cancellation, if there's a deadline you're working against.\n\nTo actually cancel #4711, you'll need to go through the store's order management page or contact customer support. Want me to pull up your pending orders in the meantime?",
+   "latency_ms": 6223.162374924868,
+   "in_tokens": 1115,
+   "out_tokens": 332,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Rome",
+      "unit": "celsius"
+     }
+    },
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Madrid",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "I'll check both cities for you.",
+   "latency_ms": 2522.4059999454767,
+   "in_tokens": 1125,
+   "out_tokens": 157,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "EUR"
+     }
+    },
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "USD"
+     }
+    }
+   ],
+   "text": "I'll convert both amounts for you.",
+   "latency_ms": 2859.5875839237124,
+   "in_tokens": 1127,
+   "out_tokens": 213,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "calls": [],
+   "text": "I can set that up, but I need one detail first: I don't have access to today's date, so I can't compute \"tomorrow\" reliably.\n\nWhat's tomorrow's date (YYYY-MM-DD)? I'll assume 09:00 AM unless you meant 21:00.",
+   "latency_ms": 4744.6266671177,
+   "in_tokens": 1125,
+   "out_tokens": 289,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "delivered",
+      "min_total": 200
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2138.7872078921646,
+   "in_tokens": 1132,
+   "out_tokens": 111,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "HAM",
+      "destination": "VIE",
+      "date": "2026-11-20",
+      "max_stops": 1
+     }
+    }
+   ],
+   "text": "I'll search for those flights.",
+   "latency_ms": 2317.7963339257985,
+   "in_tokens": 1133,
+   "out_tokens": 135,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Oslo",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "I'll check the weather in Oslo for you.",
+   "latency_ms": 2073.0166248977184,
+   "in_tokens": 1130,
+   "out_tokens": 91,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.9}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.5}]}",
+   "latency_ms": 3535.208666929975,
+   "in_tokens": 357,
+   "out_tokens": 105,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.92}",
+   "latency_ms": 1378.2245840411633,
+   "in_tokens": 250,
+   "out_tokens": 28,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
+   "latency_ms": 1608.1020419951528,
+   "in_tokens": 224,
+   "out_tokens": 60,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
+   "latency_ms": 1631.91904197447,
+   "in_tokens": 231,
+   "out_tokens": 60,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "text": "{\"products\": [], \"sentiment\": \"positive\"}",
+   "latency_ms": 1269.1325419582427,
+   "in_tokens": 198,
+   "out_tokens": 19,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "text": "{\"topic\":\"Q3 planning\",\"action_items\":[{\"owner\":\"Maria\",\"task\":\"Own the migration\",\"due\":\"Sept 30\"},{\"owner\":\"Tom\",\"task\":\"Own hiring\",\"due\":\"Oct 15\"}],\"decisions\":[\"Budget approved\",\"Next sync scheduled for Friday\"]}",
+   "latency_ms": 2083.436999935657,
+   "in_tokens": 326,
+   "out_tokens": 106,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
+   "latency_ms": 1288.2734581362456,
+   "in_tokens": 216,
+   "out_tokens": 22,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
+   "latency_ms": 2093.819708097726,
+   "in_tokens": 255,
+   "out_tokens": 65,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side.\"], \"vegan\": false}",
+   "latency_ms": 2562.7135417889804,
+   "in_tokens": 269,
+   "out_tokens": 75,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
+   "latency_ms": 2559.9309999961406,
+   "in_tokens": 235,
+   "out_tokens": 84,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
+   "latency_ms": 2096.268791006878,
+   "in_tokens": 220,
+   "out_tokens": 45,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "claude-opus-5",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
+   "latency_ms": 3235.1863749790937,
+   "in_tokens": 281,
+   "out_tokens": 41,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1448.7761671189219,
+   "in_tokens": 1184,
+   "out_tokens": 51,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2511.3048749044538,
+   "in_tokens": 1186,
+   "out_tokens": 77,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1938.4470421355218,
+   "in_tokens": 1190,
+   "out_tokens": 104,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "BER",
+      "destination": "LIS",
+      "date": "2026-09-15"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1671.1584159638733,
+   "in_tokens": 1195,
+   "out_tokens": 100,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "FRA",
+      "destination": "JFK",
+      "date": "2026-10-03",
+      "max_stops": 0
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2390.4515421018004,
+   "in_tokens": 1204,
+   "out_tokens": 168,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "calls": [
+    {
+     "tool": "create_reminder",
+     "args": {
+      "text": "Call mom",
+      "at": "2026-09-03T18:00"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1877.274458995089,
+   "in_tokens": 1193,
+   "out_tokens": 117,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "shipped",
+      "min_total": 50,
+      "limit": 10
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1698.95458384417,
+   "in_tokens": 1193,
+   "out_tokens": 95,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "customer_email": "jane@example.com",
+      "status": "cancelled"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1586.0466659069061,
+   "in_tokens": 1189,
+   "out_tokens": 80,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 250,
+      "from_currency": "USD",
+      "to_currency": "EUR"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 3502.292042132467,
+   "in_tokens": 1184,
+   "out_tokens": 101,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 3500,
+      "from_currency": "JPY",
+      "to_currency": "CHF"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1846.3101659435779,
+   "in_tokens": 1189,
+   "out_tokens": 121,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "calls": [],
+   "text": "The capital of Australia is **Canberra**. It's often mistakenly thought to be Sydney or Melbourne due to their larger size and prominence, but Canberra was purpose-built as the nation's capital as part of a compromise between those two rival cities in the early 20th century.\n\nI don't have any tools available for general knowledge questions like this one, but let me know if you'd like help with something like checking the weather in Canberra, searching for flights there, or another task I can assist with using my available tools!",
+   "latency_ms": 6164.733833866194,
+   "in_tokens": 1180,
+   "out_tokens": 156,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "calls": [],
+   "text": "100\u00b0F is 100 - 32 = 68, then 68 \u00d7 5/9 \u2248 37.78\u00b0C.\n\nSo **100\u00b0F \u2248 37.78\u00b0C**.",
+   "latency_ms": 2936.071417061612,
+   "in_tokens": 1190,
+   "out_tokens": 56,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "calls": [],
+   "text": "I'd be happy to help you search for flights to Tokyo! However, I need a bit more information to do that:\n\n1. **Origin airport** \u2013 Which city/airport are you departing from? (e.g., BER, JFK, LHR)\n2. **Destination airport in Tokyo** \u2013 Tokyo has two main airports: **NRT** (Narita) or **HND** (Haneda). Do you have a preference?\n3. **Travel date** \u2013 What date would you like to depart? (format: YYYY-MM-DD)\n4. **Stops** \u2013 Do you want direct flights only, or are layovers okay?\n\nAlso, please note: I can **search** for available flights, but actual booking/payment would need to be completed separately (e.g., through an airline or travel site) \u2014 I'll get you the flight options first!\n\nOnce you give me the origin and date, I'll pull up the available flights.",
+   "latency_ms": 5557.795250089839,
+   "in_tokens": 1183,
+   "out_tokens": 273,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "pending"
+     }
+    }
+   ],
+   "text": "I'm not able to cancel orders directly\u2014my available tools only let me *query* order information (via `query_orders`), not modify or cancel orders. I don't have a function for updating order status.\n\nHere's what I can do to help:",
+   "latency_ms": 2029.9062081612647,
+   "in_tokens": 1183,
+   "out_tokens": 118,
+   "score": {
+    "pass": false,
+    "expected_n": 0,
+    "actual_n": 1
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Rome",
+      "unit": "celsius"
+     }
+    },
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Madrid",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "I'll check the current weather for both cities right away.",
+   "latency_ms": 2739.4891660660505,
+   "in_tokens": 1193,
+   "out_tokens": 200,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "EUR"
+     }
+    },
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "USD"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2371.7525829561055,
+   "in_tokens": 1195,
+   "out_tokens": 200,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "calls": [],
+   "text": "I'd be happy to set that reminder! However, I don't have access to today's date to calculate \"tomorrow.\" Could you please provide the specific date for the dentist appointment (in YYYY-MM-DD format) along with confirming the time (9:00 AM or 9:00 PM)?\n\nFor example: \"2025-05-16 at 09:00\"",
+   "latency_ms": 3022.57191715762,
+   "in_tokens": 1193,
+   "out_tokens": 229,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "delivered",
+      "min_total": 200
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1601.6427499707788,
+   "in_tokens": 1200,
+   "out_tokens": 73,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "HAM",
+      "destination": "VIE",
+      "date": "2026-11-20",
+      "max_stops": 1
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2086.49916597642,
+   "in_tokens": 1201,
+   "out_tokens": 136,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Oslo",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2299.182290909812,
+   "in_tokens": 1198,
+   "out_tokens": 162,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.90}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.50}]}",
+   "latency_ms": 1776.8269579391927,
+   "in_tokens": 357,
+   "out_tokens": 105,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.92}",
+   "latency_ms": 2202.700042165816,
+   "in_tokens": 250,
+   "out_tokens": 28,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
+   "latency_ms": 1638.1069589406252,
+   "in_tokens": 224,
+   "out_tokens": 60,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
+   "latency_ms": 1542.6629160065204,
+   "in_tokens": 231,
+   "out_tokens": 60,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "text": "{\"products\": [], \"sentiment\": \"positive\"}",
+   "latency_ms": 1558.8568749371916,
+   "in_tokens": 198,
+   "out_tokens": 19,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "text": "{\"topic\": \"Q3 planning\", \"action_items\": [{\"owner\": \"Maria\", \"task\": \"migration\", \"due\": \"Sept 30\"}, {\"owner\": \"Tom\", \"task\": \"hiring\", \"due\": \"Oct 15\"}], \"decisions\": [\"Budget approved\", \"Next sync Friday\"]}",
+   "latency_ms": 2021.6896659694612,
+   "in_tokens": 326,
+   "out_tokens": 104,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
+   "latency_ms": 1304.5302501413971,
+   "in_tokens": 216,
+   "out_tokens": 22,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
+   "latency_ms": 1554.0619581006467,
+   "in_tokens": 255,
+   "out_tokens": 65,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side.\"], \"vegan\": false}",
+   "latency_ms": 1960.9800418838859,
+   "in_tokens": 269,
+   "out_tokens": 75,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
+   "latency_ms": 2318.359832977876,
+   "in_tokens": 235,
+   "out_tokens": 88,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
+   "latency_ms": 1614.6865831688046,
+   "in_tokens": 220,
+   "out_tokens": 45,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "claude-sonnet-5",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
+   "latency_ms": 1521.6329998802394,
+   "in_tokens": 281,
+   "out_tokens": 41,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1437.1644160710275,
+   "in_tokens": 1120,
+   "out_tokens": 54,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1552.4669999722391,
+   "in_tokens": 1118,
+   "out_tokens": 72,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1091.158209135756,
+   "in_tokens": 1123,
+   "out_tokens": 73,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "BER",
+      "destination": "LIS",
+      "date": "2026-09-15"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1097.2905000671744,
+   "in_tokens": 1128,
+   "out_tokens": 95,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "FRA",
+      "destination": "JFK",
+      "date": "2026-10-03",
+      "max_stops": 0
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2022.0425841398537,
+   "in_tokens": 1135,
+   "out_tokens": 114,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "calls": [
+    {
+     "tool": "create_reminder",
+     "args": {
+      "text": "Call mom",
+      "at": "2026-09-03T18:00"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1086.2243331503123,
+   "in_tokens": 1129,
+   "out_tokens": 81,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "shipped",
+      "min_total": 50,
+      "limit": 10
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1579.5820830389857,
+   "in_tokens": 1128,
+   "out_tokens": 90,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "customer_email": "jane@example.com",
+      "status": "cancelled"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1463.2103750482202,
+   "in_tokens": 1123,
+   "out_tokens": 77,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 250,
+      "from_currency": "USD",
+      "to_currency": "EUR"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1108.862458029762,
+   "in_tokens": 1121,
+   "out_tokens": 92,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 3500,
+      "from_currency": "JPY",
+      "to_currency": "CHF"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1177.4042081087828,
+   "in_tokens": 1123,
+   "out_tokens": 95,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "calls": [],
+   "text": "The capital of Australia is **Canberra**. \n\nCanberra was purpose-built as the capital city and is located in the Australian Capital Territory (ACT). It was chosen as a compromise between rivals Sydney and Melbourne, and was designed by American architects Walter Burley Griffin and Marion Mahoney Griffin. The city was founded in 1913 and officially became the capital in 1927.",
+   "latency_ms": 1368.5831672046334,
+   "in_tokens": 1117,
+   "out_tokens": 90,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 100,
+      "from_currency": "fahrenheit",
+      "to_currency": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1200.1307089813054,
+   "in_tokens": 1122,
+   "out_tokens": 93,
+   "score": {
+    "pass": false,
+    "expected_n": 0,
+    "actual_n": 1
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "calls": [],
+   "text": "I'd be happy to help you book a flight to Tokyo! However, I need a few more details:\n\n1. **Where are you flying from?** (Please provide the airport code, e.g., JFK, LAX, LHR, etc.)\n2. **What date would you like to depart?** (Please provide in YYYY-MM-DD format)\n3. **Maximum number of stops?** (Optional - how many stops are you willing to have? 0 for direct flights, or leave blank for any)\n\nOnce you provide these details, I can search for available flights for you.",
+   "latency_ms": 1557.436167029664,
+   "in_tokens": 1117,
+   "out_tokens": 136,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "calls": [],
+   "text": "I don't have a function available to cancel orders. The tools I have access to only allow me to query orders using the `query_orders` function, but I cannot modify or cancel them.\n\nTo cancel your pending order #4711, you'll need to:\n1. Contact customer support directly through your account or website\n2. Call the customer service phone line\n3. Use your account dashboard if there's a cancel option there\n\nWould you like me to help you find your order details instead? I can search for orders by customer email or other criteria if that would be helpful.",
+   "latency_ms": 1838.6660001706332,
+   "in_tokens": 1119,
+   "out_tokens": 124,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Rome",
+      "unit": "celsius"
+     }
+    },
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Madrid",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1232.6755421236157,
+   "in_tokens": 1125,
+   "out_tokens": 124,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "EUR"
+     }
+    },
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "from_currency": "GBP",
+      "to_currency": "USD"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1904.7343330457807,
+   "in_tokens": 1130,
+   "out_tokens": 170,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "calls": [],
+   "text": "I'd be happy to set a reminder for your dentist appointment tomorrow at 9 AM. However, I need to know today's date to calculate tomorrow's date. Could you please provide today's date or the specific date you'd like the reminder for (in YYYY-MM-DD format)?",
+   "latency_ms": 1026.3555001001805,
+   "in_tokens": 1123,
+   "out_tokens": 65,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "delivered",
+      "min_total": 200
+     }
+    }
+   ],
+   "text": "Ich werde die gelieferten Bestellungen mit einem Gesamtbetrag \u00fcber 200 Euro f\u00fcr Sie abfragen.",
+   "latency_ms": 1126.0102500673383,
+   "in_tokens": 1131,
+   "out_tokens": 106,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "origin": "HAM",
+      "destination": "VIE",
+      "date": "2026-11-20",
+      "max_stops": 1
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 3826.744917081669,
+   "in_tokens": 1131,
+   "out_tokens": 115,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Oslo",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1227.5377078913152,
+   "in_tokens": 1125,
+   "out_tokens": 71,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "text": "```json\n{\n  \"invoice_id\": \"INV-2041\",\n  \"vendor\": \"ACME GmbH\",\n  \"date\": \"2026-07-03\",\n  \"items\": [\n    {\n      \"name\": \"Widget A\",\n      \"qty\": 3,\n      \"unit_price\": 19.90\n    },\n    {\n      \"name\": \"Widget B\",\n      \"qty\": 1,\n      \"unit_price\": 4.50\n    }\n  ]\n}\n```",
+   "latency_ms": 945.1166251674294,
+   "in_tokens": 264,
+   "out_tokens": 128,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "text": "```json\n{\n  \"category\": \"performance\",\n  \"urgency\": \"high\",\n  \"confidence\": 0.95\n}\n```",
+   "latency_ms": 823.4014590270817,
+   "in_tokens": 178,
+   "out_tokens": 37,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "text": "```json\n{\n  \"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\",\n  \"email\": \"jose.mueller@uni-berlin.de\",\n  \"phone\": \"+49 30 1234567\"\n}\n```",
+   "latency_ms": 793.464875081554,
+   "in_tokens": 163,
+   "out_tokens": 61,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "text": "{\n  \"recipient\": \"Anna Schmidt\",\n  \"street\": \"Hauptstr. 5\",\n  \"postal_code\": \"01099\",\n  \"city\": \"Dresden\",\n  \"country\": \"Germany\"\n}",
+   "latency_ms": 877.7264170348644,
+   "in_tokens": 161,
+   "out_tokens": 55,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "text": "```json\n{\n  \"products\": [],\n  \"sentiment\": \"positive\"\n}\n```",
+   "latency_ms": 599.6079999022186,
+   "in_tokens": 135,
+   "out_tokens": 25,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "text": "```json\n{\n  \"topic\": \"Q3 planning\",\n  \"action_items\": [\n    {\n      \"owner\": \"Maria\",\n      \"task\": \"migration\",\n      \"due\": \"2024-09-30\"\n    },\n    {\n      \"owner\": \"Tom\",\n      \"task\": \"hiring\",\n      \"due\": \"2024-10-15\"\n    }\n  ],\n  \"decisions\": [\n    \"Budget approved\"\n  ]\n}\n```",
+   "latency_ms": 1298.367875162512,
+   "in_tokens": 234,
+   "out_tokens": 118,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "text": "```json\n{\"tone_rating\": 1, \"is_constructive\": false}\n```",
+   "latency_ms": 688.7788749299943,
+   "in_tokens": 151,
+   "out_tokens": 24,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "text": "```json\n{\n  \"timestamp\": \"2026-08-12T14:03:22Z\",\n  \"level\": \"ERROR\",\n  \"service\": \"payment-svc\",\n  \"message\": \"Connection pool exhausted (retries=3)\",\n  \"retries\": 3\n}\n```",
+   "latency_ms": 1077.8677079360932,
+   "in_tokens": 179,
+   "out_tokens": 74,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "text": "```json\n{\n  \"name\": \"Grandma's pancakes\",\n  \"ingredients\": [\n    \"2 cups flour\",\n    \"3 eggs\",\n    \"a pinch of salt\"\n  ],\n  \"steps\": [\n    \"Fry 5 minutes per side\"\n  ],\n  \"vegan\": false\n}\n```",
+   "latency_ms": 1358.600707957521,
+   "in_tokens": 190,
+   "out_tokens": 86,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "text": "```json\n{\n  \"lat\": 41.7258,\n  \"lon\": -49.9458\n}\n```",
+   "latency_ms": 650.2917080651969,
+   "in_tokens": 164,
+   "out_tokens": 32,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "text": "```json\n{\n  \"eu_members\": [\"Germany\", \"France\", \"Spain\"],\n  \"non_eu\": [\"Switzerland\", \"Norway\"]\n}\n```",
+   "latency_ms": 631.7175419535488,
+   "in_tokens": 154,
+   "out_tokens": 40,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "claude-haiku-4-5",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "text": "```json\n{\n  \"service\": \"ingest\",\n  \"replicas\": 2,\n  \"persistence\": false,\n  \"port\": 8080,\n  \"env\": \"prod\"\n}\n```",
+   "latency_ms": 694.1414580214769,
+   "in_tokens": 205,
+   "out_tokens": 53,
+   "score": {
+    "pass": false,
+    "strict_parse": false,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "gemini-2.5-pro",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2825.7838340941817,
+   "in_tokens": 511,
+   "out_tokens": 16,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 5368.422583909705,
+   "in_tokens": 508,
+   "out_tokens": 24,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 4668.050542008132,
+   "in_tokens": 513,
+   "out_tokens": 24,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "destination": "LIS",
+      "date": "2026-09-15",
+      "origin": "BER"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 5233.585750218481,
+   "in_tokens": 520,
+   "out_tokens": 37,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "calls": [
+    {
+     "tool": "create_reminder",
+     "args": {
+      "at": "2026-09-03T18:00",
+      "text": "Call mom"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 4915.279750013724,
+   "in_tokens": 521,
+   "out_tokens": 38,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "limit": 10,
+      "min_total": 50,
+      "status": "shipped"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 15387.248625047505,
+   "in_tokens": 518,
+   "out_tokens": 29,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "text": "{\"lat\":41.7258,\"lon\":-49.9458}",
+   "latency_ms": 12105.034624924883,
+   "in_tokens": 158,
+   "out_tokens": 22,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
+   "latency_ms": 1558.5899578873068,
+   "in_tokens": 192,
+   "out_tokens": 34,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc01",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Berlin"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 3824.4107079226524,
+   "in_tokens": 511,
+   "out_tokens": 16,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc02",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Munich",
+      "unit": "fahrenheit"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 5414.912916021422,
+   "in_tokens": 508,
+   "out_tokens": 24,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc03",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Lisbon",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2268.8564171548933,
+   "in_tokens": 513,
+   "out_tokens": 24,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "knowledge-resolution"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc04",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "date": "2026-09-15",
+      "origin": "BER",
+      "destination": "LIS"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 11127.19608307816,
+   "in_tokens": 520,
+   "out_tokens": 37,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc05",
+   "calls": [
+    {
+     "tool": "search_flights",
+     "args": {
+      "max_stops": 0,
+      "origin": "FRA",
+      "date": "2026-10-03",
+      "destination": "JFK"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 6211.759167024866,
+   "in_tokens": 524,
+   "out_tokens": 44,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion",
+    "implicit-arg"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc06",
+   "calls": [
+    {
+     "tool": "create_reminder",
+     "args": {
+      "at": "2026-09-03T18:00",
+      "text": "Call mom"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 2417.5567908678204,
+   "in_tokens": 521,
+   "out_tokens": 38,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc07",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "status": "shipped",
+      "limit": 10,
+      "min_total": 50
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 8061.594958882779,
+   "in_tokens": 518,
+   "out_tokens": 29,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "multi-arg"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc08",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "customer_email": "jane@example.com",
+      "status": "cancelled"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 4864.214500179514,
+   "in_tokens": 513,
+   "out_tokens": 28,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "easy"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc09",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 250,
+      "from_currency": "USD",
+      "to_currency": "EUR"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 3001.7243339680135,
+   "in_tokens": 512,
+   "out_tokens": 32,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc10",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "from_currency": "JPY",
+      "to_currency": "CHF",
+      "amount": 3500
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 668.5584171209484,
+   "in_tokens": 511,
+   "out_tokens": 33,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "number-parsing",
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc11",
+   "calls": [],
+   "text": "The capital of Australia is Canberra.",
+   "latency_ms": 670.0072081293911,
+   "in_tokens": 508,
+   "out_tokens": 7,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc12",
+   "calls": [],
+   "text": "100 degrees Fahrenheit is approximately **37.78 degrees Celsius**.",
+   "latency_ms": 1214.7658749017864,
+   "in_tokens": 513,
+   "out_tokens": 16,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "no-tool",
+    "distractor-resistance"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc13",
+   "calls": [],
+   "text": "I'd be happy to help you with that! Could you please let me know:\n\n1. **Where** are you flying from (departure city or airport code, e.g., BER, JFK)?\n2. **When** would you like to fly (date)?\n3. Do you have a preference for non-stop flights or are you okay with stops?",
+   "latency_ms": 1096.2646249681711,
+   "in_tokens": 507,
+   "out_tokens": 77,
+   "score": {
+    "pass": true,
+    "expected_n": 0,
+    "actual_n": 0
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc14",
+   "calls": [
+    {
+     "tool": "query_orders",
+     "args": {
+      "customer_email": "4711"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 819.8512501548976,
+   "in_tokens": 511,
+   "out_tokens": 21,
+   "score": {
+    "pass": false,
+    "expected_n": 0,
+    "actual_n": 1
+   },
+   "tags": [
+    "no-matching-tool",
+    "hallucination-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc15",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Rome",
+      "unit": "celsius"
+     }
+    },
+    {
+     "tool": "get_weather",
+     "args": {
+      "city": "Madrid",
+      "unit": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1024.1756250616163,
+   "in_tokens": 515,
+   "out_tokens": 46,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc16",
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 80,
+      "to_currency": "EUR",
+      "from_currency": "GBP"
+     }
+    },
+    {
+     "tool": "convert_currency",
+     "args": {
+      "from_currency": "GBP",
+      "amount": 80,
+      "to_currency": "USD"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 981.2331669963896,
+   "in_tokens": 516,
+   "out_tokens": 62,
+   "score": {
+    "pass": true,
+    "expected_n": 2,
+    "actual_n": 2
+   },
+   "tags": [
+    "parallel"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc17",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "underspecified",
+    "hallucination-trap",
+    "relative-date"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc18",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "multilingual"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc19",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "format-coercion"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "tool_calling",
+   "case_id": "tc20",
+   "calls": [
+    {
+     "tool": "get_weather",
+     "args": {
+      "unit": "celsius",
+      "city": "Oslo"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 984.1079169418663,
+   "in_tokens": 516,
+   "out_tokens": 24,
+   "score": {
+    "pass": true,
+    "expected_n": 1,
+    "actual_n": 1
+   },
+   "tags": [
+    "indirect-intent"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js01",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "nested-array"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js02",
+   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.95}",
+   "latency_ms": 801.7368328291923,
+   "in_tokens": 164,
+   "out_tokens": 22,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "enum",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js03",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "unicode",
+    "pattern"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js04",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "string-vs-number-trap"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js05",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "empty-array",
+    "enum"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js06",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "nested-array",
+    "nullable"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js07",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "integer-bound",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js08",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "extraction"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js09",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "inference",
+    "boolean"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js10",
+   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "score": {
+    "pass": false,
+    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+   },
+   "tags": [
+    "arithmetic",
+    "bounded-number"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js11",
+   "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
+   "latency_ms": 857.5133332051337,
+   "in_tokens": 141,
+   "out_tokens": 25,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "knowledge-filter",
+    "enum-array"
+   ]
+  },
+  {
+   "model": "gemini-3.5-flash-lite",
+   "kind": "json_adherence",
+   "case_id": "js12",
+   "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
+   "latency_ms": 863.9988750219345,
+   "in_tokens": 192,
+   "out_tokens": 34,
+   "score": {
+    "pass": true,
+    "strict_parse": true,
+    "parsed": true,
+    "schema_valid": true,
+    "checks_pass": true
+   },
+   "tags": [
+    "construction",
+    "noise-resistance"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+  "tools": [
+    {
+      "name": "get_weather",
+      "description": "Get current weather for a city",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "city": {"type": "string", "description": "City name, no country"},
+          "unit": {"type": "string", "enum": ["celsius", "fahrenheit"], "description": "Temperature unit"}
+        },
+        "required": ["city"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "search_flights",
+      "description": "Search one-way flights between two airports on a date",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "origin": {"type": "string", "description": "IATA airport code, e.g. BER"},
+          "destination": {"type": "string", "description": "IATA airport code"},
+          "date": {"type": "string", "description": "ISO date YYYY-MM-DD"},
+          "max_stops": {"type": "integer", "minimum": 0, "description": "Maximum number of stops"}
+        },
+        "required": ["origin", "destination", "date"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "create_reminder",
+      "description": "Create a reminder at an absolute time",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "text": {"type": "string"},
+          "at": {"type": "string", "description": "ISO datetime YYYY-MM-DDTHH:MM"}
+        },
+        "required": ["text", "at"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "query_orders",
+      "description": "Query the orders database with structured filters",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "status": {"type": "string", "enum": ["pending", "shipped", "delivered", "cancelled"]},
+          "min_total": {"type": "number", "description": "Minimum order total in EUR"},
+          "customer_email": {"type": "string"},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 100}
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "convert_currency",
+      "description": "Convert an amount between currencies at current rates",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "amount": {"type": "number"},
+          "from_currency": {"type": "string", "description": "ISO 4217 code, e.g. EUR"},
+          "to_currency": {"type": "string", "description": "ISO 4217 code"}
+        },
+        "required": ["amount", "from_currency", "to_currency"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which model should power your agent?</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 2rem 1rem 4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--surface-1); color: var(--text-primary);
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .viz-root {
+    color-scheme: light;
+    --surface-1: #fcfcfb; --text-primary: #0b0b0b; --text-secondary: #52514e;
+    --grid: #e8e7e4; --series-1: #2a78d6; --series-2: #eb6834;
+    --seq-250: #86b6ef; --seq-550: #1c5cab; --tooltip-bg: #0b0b0b; --tooltip-fg: #fcfcfb;
+    max-width: 880px; width: 100%;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1: #1a1a19; --text-primary: #ffffff; --text-secondary: #c3c2b7;
+      --grid: #34343146; --series-1: #3987e5; --series-2: #d95926;
+      --seq-250: #3987e5; --seq-550: #9ec5f4; --tooltip-bg: #fcfcfb; --tooltip-fg: #0b0b0b;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1: #1a1a19; --text-primary: #ffffff; --text-secondary: #c3c2b7;
+    --grid: #34343146; --series-1: #3987e5; --series-2: #d95926;
+    --seq-250: #3987e5; --seq-550: #9ec5f4; --tooltip-bg: #fcfcfb; --tooltip-fg: #0b0b0b;
+  }
+  body:has(.viz-root) { background: none; }
+  html, body { background: #fcfcfb; }
+  @media (prefers-color-scheme: dark) { html:not([data-theme="light"]), html:not([data-theme="light"]) body { background: #1a1a19; } }
+  :root[data-theme="dark"] body { background: #1a1a19; }
+  h1 { font-size: 1.6rem; margin: 0 0 .3rem; }
+  .sub { color: var(--text-secondary); margin: 0 0 2rem; font-size: .95rem; max-width: 60ch; }
+  h2 { font-size: 1.05rem; margin: 2.4rem 0 .2rem; }
+  .note { color: var(--text-secondary); font-size: .85rem; margin: 0 0 .8rem; }
+  svg text { font-family: inherit; }
+  .lbl { fill: var(--text-primary); font-size: 13px; }
+  .val { fill: var(--text-secondary); font-size: 12px; }
+  .grid-line { stroke: var(--grid); stroke-width: 1; }
+  .legend { display: flex; gap: 1.2rem; font-size: .85rem; color: var(--text-secondary); margin: .2rem 0 .4rem; }
+  .legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .legend .a::before { background: var(--seq-250); }
+  .legend .b::before { background: var(--seq-550); }
+  #tooltip { position: fixed; pointer-events: none; background: var(--tooltip-bg); color: var(--tooltip-fg);
+    padding: 6px 9px; border-radius: 6px; font-size: 12px; opacity: 0; transition: opacity .1s; z-index: 10; }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; margin-top: .5rem; }
+  th, td { text-align: right; padding: 6px 10px; border-bottom: 1px solid var(--grid); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--text-secondary); font-weight: 600; }
+  footer { color: var(--text-secondary); font-size: .8rem; margin-top: 3rem; max-width: 60ch; }
+  a { color: var(--series-1); }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <h1>Which model should power your agent?</h1>
+  <p class="sub">Tool-calling accuracy, JSON-schema adherence, latency and cost across
+  6 models — 20 tool-calling cases (hallucination traps, parallel calls,
+  no-tool distractors) and 12 strict-JSON extraction cases. Generated full.
+  <a href="https://github.com/ajbermudezh22/agent-model-bench">Method &amp; harness on GitHub</a>.</p>
+
+  <h2>Tool-calling accuracy</h2>
+  <p class="note">Exact tool + argument match, over-calling penalized. 20 cases.</p>
+  <div id="chart-tools"></div>
+
+  <h2>JSON adherence: instruction-following vs content</h2>
+  <p class="note">Strict = raw parseable JSON as instructed (no fences). Content = schema-valid after stripping fences. The gap is formatting discipline, not capability. 12 cases.</p>
+  <div class="legend"><span class="a">strict</span><span class="b">content</span></div>
+  <div id="chart-json"></div>
+
+  <h2>Median latency per call</h2>
+  <div id="chart-latency"></div>
+
+  <h2>All numbers</h2>
+  <table id="table"></table>
+
+  <footer>Single-turn calls, default settings per provider, no system-prompt tuning
+  beyond the JSON instruction. Costs from list prices where published; n/a where not.
+  Small suite — treat as a directional screen, not a leaderboard.</footer>
+</div>
+<div id="tooltip"></div>
+<script>
+const DATA = {"summary": {"claude-opus-5": {"label": "Claude Opus 5", "tool_calling": {"pass": 20, "total": 20, "median_latency_ms": 2354}, "json_adherence": {"pass": 12, "total": 12, "median_latency_ms": 2089, "content_ok": 12}, "in_tokens": 25525, "out_tokens": 3620, "run_cost_usd": 0.2181, "errors": 0}, "claude-sonnet-5": {"label": "Claude Sonnet 5", "tool_calling": {"pass": 19, "total": 20, "median_latency_ms": 2193}, "json_adherence": {"pass": 12, "total": 12, "median_latency_ms": 1626, "content_ok": 12}, "in_tokens": 26885, "out_tokens": 3329, "run_cost_usd": 0.1306, "errors": 0}, "claude-haiku-4-5": {"label": "Claude Haiku 4.5", "tool_calling": {"pass": 19, "total": 20, "median_latency_ms": 1301}, "json_adherence": {"pass": 1, "total": 12, "median_latency_ms": 808, "content_ok": 12}, "in_tokens": 24666, "out_tokens": 2670, "run_cost_usd": 0.038, "errors": 0}, "gemini-2.5-pro": {"label": "Gemini 2.5 Pro", "tool_calling": {"pass": 0, "total": 20, "median_latency_ms": null}, "json_adherence": {"pass": 0, "total": 12, "median_latency_ms": null, "content_ok": 0}, "in_tokens": 0, "out_tokens": 0, "run_cost_usd": null, "errors": 32}, "gemini-3.7-flash": {"label": "Gemini 3.7 Flash", "tool_calling": {"pass": 6, "total": 20, "median_latency_ms": 5074}, "json_adherence": {"pass": 2, "total": 12, "median_latency_ms": 6832, "content_ok": 2}, "in_tokens": 3441, "out_tokens": 224, "run_cost_usd": null, "errors": 24}, "gemini-3.5-flash-lite": {"label": "Gemini 3.5 Flash Lite", "tool_calling": {"pass": 16, "total": 20, "median_latency_ms": 2269}, "json_adherence": {"pass": 3, "total": 12, "median_latency_ms": 858, "content_ok": 3}, "in_tokens": 9234, "out_tokens": 639, "run_cost_usd": null, "errors": 12}}};
+const tip = document.getElementById("tooltip");
+function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1;
+  tip.style.left = (e.clientX + 12) + "px"; tip.style.top = (e.clientY - 10) + "px"; }
+function hideTip() { tip.style.opacity = 0; }
+const css = n => getComputedStyle(document.querySelector(".viz-root")).getPropertyValue(n).trim();
+
+function barChart(el, rows, opts) {
+  const W = 860, rowH = 34, padL = 170, padR = 70, H = rows.length * rowH + 24;
+  const max = opts.max ?? Math.max(...rows.map(r => r.v));
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label}">`;
+  for (const f of [0, .25, .5, .75, 1]) {
+    const x = padL + f * (W - padL - padR);
+    s += `<line class="grid-line" x1="${x}" y1="6" x2="${x}" y2="${H - 18}"/>`;
+    s += `<text class="val" x="${x}" y="${H - 4}" text-anchor="middle">${opts.tick(f * max)}</text>`;
+  }
+  rows.forEach((r, i) => {
+    const y = 10 + i * rowH, w = Math.max((r.v / max) * (W - padL - padR), 2);
+    s += `<text class="lbl" x="${padL - 10}" y="${y + 15}" text-anchor="end">${r.name}</text>`;
+    s += `<path d="M${padL},${y} h${w - 4} a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-${w - 4} z"
+      fill="${opts.color}" data-tip="${r.name}: ${r.tip}"/>`;
+    s += `<text class="val" x="${padL + w + 8}" y="${y + 15}">${r.tip}</text>`;
+  });
+  s += "</svg>";
+  el.innerHTML = s;
+}
+
+function dumbbell(el, rows) {
+  const W = 860, rowH = 38, padL = 170, padR = 40, H = rows.length * rowH + 24;
+  const max = 12;
+  const x = v => padL + (v / max) * (W - padL - padR);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="JSON strict vs content by model">`;
+  for (const t of [0, 3, 6, 9, 12]) {
+    s += `<line class="grid-line" x1="${x(t)}" y1="6" x2="${x(t)}" y2="${H - 18}"/>`;
+    s += `<text class="val" x="${x(t)}" y="${H - 4}" text-anchor="middle">${t}</text>`;
+  }
+  rows.forEach((r, i) => {
+    const y = 14 + i * rowH + 9;
+    s += `<text class="lbl" x="${padL - 10}" y="${y + 4}" text-anchor="end">${r.name}</text>`;
+    s += `<line x1="${x(r.strict)}" y1="${y}" x2="${x(r.content)}" y2="${y}" stroke="${css('--seq-250')}" stroke-width="2"/>`;
+    s += `<circle cx="${x(r.strict)}" cy="${y}" r="6" fill="${css('--seq-250')}" data-tip="${r.name} — strict: ${r.strict}/12"/>`;
+    s += `<circle cx="${x(r.content)}" cy="${y}" r="6" fill="${css('--seq-550')}" data-tip="${r.name} — content: ${r.content}/12"/>`;
+  });
+  s += "</svg>";
+  el.innerHTML = s;
+}
+
+const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}));
+const byTools = [...models].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
+barChart(document.getElementById("chart-tools"),
+  byTools.map(m => ({name: m.label, v: m.tool_calling.pass, tip: `${m.tool_calling.pass}/${m.tool_calling.total}`})),
+  {color: css("--series-1"), max: 20, tick: v => v.toFixed(0), label: "Tool-calling accuracy by model"});
+
+dumbbell(document.getElementById("chart-json"),
+  [...models].sort((a, b) => b.json_adherence.content_ok - a.json_adherence.content_ok)
+    .map(m => ({name: m.label, strict: m.json_adherence.pass, content: m.json_adherence.content_ok})));
+
+const byLat = [...models].filter(m => m.tool_calling.median_latency_ms)
+  .sort((a, b) => a.tool_calling.median_latency_ms - b.tool_calling.median_latency_ms);
+barChart(document.getElementById("chart-latency"),
+  byLat.map(m => ({name: m.label, v: m.tool_calling.median_latency_ms, tip: `${(m.tool_calling.median_latency_ms / 1000).toFixed(1)}s`})),
+  {color: css("--series-2"), tick: v => (v / 1000).toFixed(1) + "s", label: "Median latency by model"});
+
+document.getElementById("table").innerHTML =
+  `<tr><th>model</th><th>tools</th><th>json strict</th><th>json content</th><th>median latency</th><th>run cost</th></tr>` +
+  models.map(m => `<tr><td>${m.label}</td><td>${m.tool_calling.pass}/${m.tool_calling.total}</td>` +
+    `<td>${m.json_adherence.pass}/12</td><td>${m.json_adherence.content_ok}/12</td>` +
+    `<td>${m.tool_calling.median_latency_ms ? (m.tool_calling.median_latency_ms/1000).toFixed(1) + "s" : "n/a"}</td>` +
+    `<td>${m.run_cost_usd != null ? "$" + m.run_cost_usd.toFixed(3) : "n/a"}</td></tr>`).join("");
+
+document.querySelectorAll("[data-tip]").forEach(n => {
+  n.addEventListener("mousemove", e => showTip(e, n.dataset.tip));
+  n.addEventListener("mouseleave", hideTip);
+});
+</script>
+</body>
+</html>
