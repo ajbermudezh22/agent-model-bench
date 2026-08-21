@@ -74,9 +74,11 @@ TEMPLATE = """<!doctype html>
 <div class="viz-root">
   <h1>Which model should power your agent?</h1>
   <p class="sub">Tool-calling accuracy, JSON-schema adherence, latency and cost across
-  __N_MODELS__ models — 20 tool-calling cases (hallucination traps, parallel calls,
+  <span id="n-models">__N_MODELS__</span> models — 20 tool-calling cases (hallucination traps, parallel calls,
   no-tool distractors) and 12 strict-JSON extraction cases. Generated __STAMP__.
   <a href="https://github.com/ajbermudezh22/agent-model-bench">Method &amp; harness on GitHub</a>.</p>
+
+  <p class="note" id="omitted-note" style="display:none"></p>
 
   <h2>Tool-calling accuracy</h2>
   <p class="note">Exact tool + argument match, over-calling penalized. 20 cases.</p>
@@ -148,8 +150,16 @@ function dumbbell(el, rows) {
 
 const errRate = m => (m.tool_calling.errors + m.json_adherence.errors) /
   (m.tool_calling.total + m.json_adherence.total);
-const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}))
-  .filter(m => errRate(m) < 0.99);   // drop models whose run never happened (dead id)
+const all = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}));
+const models = all.filter(m => errRate(m) < 0.99);
+const omitted = all.filter(m => errRate(m) >= 0.99);
+document.getElementById("n-models").textContent = models.length;
+if (omitted.length) {
+  const n = document.getElementById("omitted-note");
+  n.style.display = "block";
+  n.textContent = "Omitted this run (all calls failed on provider quota/rate limits): " +
+    omitted.map(m => m.label).join(", ") + ". They return automatically when the weekly refresh succeeds.";
+}
 const clean = models.filter(m => errRate(m) <= 0.1);   // charts: clean runs only
 const byTools = [...clean].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
 barChart(document.getElementById("chart-tools"),
