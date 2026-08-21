@@ -27,6 +27,8 @@ TEMPLATE = """<!doctype html>
     --grid: #e8e7e4; --series-1: #2a78d6; --series-2: #eb6834;
     --seq-250: #86b6ef; --seq-550: #1c5cab; --tooltip-bg: #0b0b0b; --tooltip-fg: #fcfcfb;
     max-width: 880px; width: 100%;
+    color: var(--text-primary);
+    background: var(--surface-1);
   }
   @media (prefers-color-scheme: dark) {
     :root:where(:not([data-theme="light"])) .viz-root {
@@ -114,7 +116,7 @@ function barChart(el, rows, opts) {
     s += `<text class="val" x="${x}" y="${H - 4}" text-anchor="middle">${opts.tick(f * max)}</text>`;
   }
   rows.forEach((r, i) => {
-    const y = 10 + i * rowH, w = Math.max((r.v / max) * (W - padL - padR), 2);
+    const y = 10 + i * rowH, w = Math.max((r.v / max) * (W - padL - padR), 4);
     s += `<text class="lbl" x="${padL - 10}" y="${y + 15}" text-anchor="end">${r.name}</text>`;
     s += `<path d="M${padL},${y} h${w - 4} a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-${w - 4} z"
       fill="${opts.color}" data-tip="${r.name}: ${r.tip}"/>`;
@@ -144,17 +146,21 @@ function dumbbell(el, rows) {
   el.innerHTML = s;
 }
 
-const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}));
-const byTools = [...models].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
+const errRate = m => (m.tool_calling.errors + m.json_adherence.errors) /
+  (m.tool_calling.total + m.json_adherence.total);
+const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}))
+  .filter(m => errRate(m) < 0.99);   // drop models whose run never happened (dead id)
+const clean = models.filter(m => errRate(m) <= 0.1);   // charts: clean runs only
+const byTools = [...clean].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
 barChart(document.getElementById("chart-tools"),
   byTools.map(m => ({name: m.label, v: m.tool_calling.pass, tip: `${m.tool_calling.pass}/${m.tool_calling.total}`})),
   {color: css("--series-1"), max: 20, tick: v => v.toFixed(0), label: "Tool-calling accuracy by model"});
 
 dumbbell(document.getElementById("chart-json"),
-  [...models].sort((a, b) => b.json_adherence.content_ok - a.json_adherence.content_ok)
+  [...clean].sort((a, b) => b.json_adherence.content_ok - a.json_adherence.content_ok)
     .map(m => ({name: m.label, strict: m.json_adherence.pass, content: m.json_adherence.content_ok})));
 
-const byLat = [...models].filter(m => m.tool_calling.median_latency_ms)
+const byLat = [...clean].filter(m => m.tool_calling.median_latency_ms)
   .sort((a, b) => a.tool_calling.median_latency_ms - b.tool_calling.median_latency_ms);
 barChart(document.getElementById("chart-latency"),
   byLat.map(m => ({name: m.label, v: m.tool_calling.median_latency_ms, tip: `${(m.tool_calling.median_latency_ms / 1000).toFixed(1)}s`})),
@@ -162,10 +168,11 @@ barChart(document.getElementById("chart-latency"),
 
 document.getElementById("table").innerHTML =
   `<tr><th>model</th><th>tools</th><th>json strict</th><th>json content</th><th>median latency</th><th>run cost</th></tr>` +
-  models.map(m => `<tr><td>${m.label}</td><td>${m.tool_calling.pass}/${m.tool_calling.total}</td>` +
+  models.map(m => `<tr><td>${m.label}${errRate(m) > 0.1 ? " ⚠" : ""}</td><td>${m.tool_calling.pass}/${m.tool_calling.total}</td>` +
     `<td>${m.json_adherence.pass}/12</td><td>${m.json_adherence.content_ok}/12</td>` +
     `<td>${m.tool_calling.median_latency_ms ? (m.tool_calling.median_latency_ms/1000).toFixed(1) + "s" : "n/a"}</td>` +
-    `<td>${m.run_cost_usd != null ? "$" + m.run_cost_usd.toFixed(3) : "n/a"}</td></tr>`).join("");
+    `<td>${m.run_cost_usd != null ? "$" + m.run_cost_usd.toFixed(3) : "n/a"}</td></tr>` +
+    (errRate(m) > 0.1 ? `<tr><td colspan=6 style="color:var(--text-secondary);font-size:.8rem">⚠ ${m.tool_calling.errors + m.json_adherence.errors}/32 calls failed on provider rate limits — failed calls count as misses above, so these numbers understate the model. Excluded from charts; will be re-run.</td></tr>` : "")).join("");
 
 document.querySelectorAll("[data-tip]").forEach(n => {
   n.addEventListener("mousemove", e => showTip(e, n.dataset.tip));
@@ -184,7 +191,7 @@ def main() -> int:
         TEMPLATE
         .replace("__DATA__", json.dumps({"summary": scored["summary"]}))
         .replace("__N_MODELS__", str(len(scored["summary"])))
-        .replace("__STAMP__", raw_name.replace("raw-", "").replace(".json", "") or "latest")
+        .replace("__STAMP__", __import__("datetime").date.today().isoformat())
     )
     out = ROOT / "docs/index.html"
     out.write_text(html)

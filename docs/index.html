@@ -18,6 +18,8 @@
     --grid: #e8e7e4; --series-1: #2a78d6; --series-2: #eb6834;
     --seq-250: #86b6ef; --seq-550: #1c5cab; --tooltip-bg: #0b0b0b; --tooltip-fg: #fcfcfb;
     max-width: 880px; width: 100%;
+    color: var(--text-primary);
+    background: var(--surface-1);
   }
   @media (prefers-color-scheme: dark) {
     :root:where(:not([data-theme="light"])) .viz-root {
@@ -64,7 +66,7 @@
   <h1>Which model should power your agent?</h1>
   <p class="sub">Tool-calling accuracy, JSON-schema adherence, latency and cost across
   6 models — 20 tool-calling cases (hallucination traps, parallel calls,
-  no-tool distractors) and 12 strict-JSON extraction cases. Generated full.
+  no-tool distractors) and 12 strict-JSON extraction cases. Generated 2026-08-21.
   <a href="https://github.com/ajbermudezh22/agent-model-bench">Method &amp; harness on GitHub</a>.</p>
 
   <h2>Tool-calling accuracy</h2>
@@ -88,7 +90,7 @@
 </div>
 <div id="tooltip"></div>
 <script>
-const DATA = {"summary": {"claude-opus-5": {"label": "Claude Opus 5", "tool_calling": {"pass": 20, "total": 20, "median_latency_ms": 2354}, "json_adherence": {"pass": 12, "total": 12, "median_latency_ms": 2089, "content_ok": 12}, "in_tokens": 25525, "out_tokens": 3620, "run_cost_usd": 0.2181, "errors": 0}, "claude-sonnet-5": {"label": "Claude Sonnet 5", "tool_calling": {"pass": 19, "total": 20, "median_latency_ms": 2193}, "json_adherence": {"pass": 12, "total": 12, "median_latency_ms": 1626, "content_ok": 12}, "in_tokens": 26885, "out_tokens": 3329, "run_cost_usd": 0.1306, "errors": 0}, "claude-haiku-4-5": {"label": "Claude Haiku 4.5", "tool_calling": {"pass": 19, "total": 20, "median_latency_ms": 1301}, "json_adherence": {"pass": 1, "total": 12, "median_latency_ms": 808, "content_ok": 12}, "in_tokens": 24666, "out_tokens": 2670, "run_cost_usd": 0.038, "errors": 0}, "gemini-2.5-pro": {"label": "Gemini 2.5 Pro", "tool_calling": {"pass": 0, "total": 20, "median_latency_ms": null}, "json_adherence": {"pass": 0, "total": 12, "median_latency_ms": null, "content_ok": 0}, "in_tokens": 0, "out_tokens": 0, "run_cost_usd": null, "errors": 32}, "gemini-3.7-flash": {"label": "Gemini 3.7 Flash", "tool_calling": {"pass": 6, "total": 20, "median_latency_ms": 5074}, "json_adherence": {"pass": 2, "total": 12, "median_latency_ms": 6832, "content_ok": 2}, "in_tokens": 3441, "out_tokens": 224, "run_cost_usd": null, "errors": 24}, "gemini-3.5-flash-lite": {"label": "Gemini 3.5 Flash Lite", "tool_calling": {"pass": 16, "total": 20, "median_latency_ms": 2269}, "json_adherence": {"pass": 3, "total": 12, "median_latency_ms": 858, "content_ok": 3}, "in_tokens": 9234, "out_tokens": 639, "run_cost_usd": null, "errors": 12}}};
+const DATA = {"summary": {"claude-opus-5": {"label": "Claude Opus 5", "tool_calling": {"pass": 20, "total": 20, "errors": 0, "median_latency_ms": 2354}, "json_adherence": {"pass": 12, "total": 12, "errors": 0, "median_latency_ms": 2089, "content_ok": 12}, "in_tokens": 25525, "out_tokens": 3620, "run_cost_usd": 0.2181, "errors": 0}, "claude-sonnet-5": {"label": "Claude Sonnet 5", "tool_calling": {"pass": 19, "total": 20, "errors": 0, "median_latency_ms": 2193}, "json_adherence": {"pass": 12, "total": 12, "errors": 0, "median_latency_ms": 1626, "content_ok": 12}, "in_tokens": 26885, "out_tokens": 3329, "run_cost_usd": 0.1306, "errors": 0}, "claude-haiku-4-5": {"label": "Claude Haiku 4.5", "tool_calling": {"pass": 19, "total": 20, "errors": 0, "median_latency_ms": 1301}, "json_adherence": {"pass": 1, "total": 12, "errors": 0, "median_latency_ms": 808, "content_ok": 12}, "in_tokens": 24666, "out_tokens": 2670, "run_cost_usd": 0.038, "errors": 0}, "gemini-2.5-pro": {"label": "Gemini 2.5 Pro", "tool_calling": {"pass": 0, "total": 20, "errors": 20, "median_latency_ms": null}, "json_adherence": {"pass": 0, "total": 12, "errors": 12, "median_latency_ms": null, "content_ok": 0}, "in_tokens": 0, "out_tokens": 0, "run_cost_usd": null, "errors": 32}, "gemini-3.7-flash": {"label": "Gemini 3.7 Flash", "tool_calling": {"pass": 6, "total": 20, "errors": 14, "median_latency_ms": 5074}, "json_adherence": {"pass": 2, "total": 12, "errors": 10, "median_latency_ms": 6832, "content_ok": 2}, "in_tokens": 3441, "out_tokens": 224, "run_cost_usd": null, "errors": 24}, "gemini-3.5-flash-lite": {"label": "Gemini 3.5 Flash Lite", "tool_calling": {"pass": 16, "total": 20, "errors": 3, "median_latency_ms": 2269}, "json_adherence": {"pass": 3, "total": 12, "errors": 9, "median_latency_ms": 858, "content_ok": 3}, "in_tokens": 9234, "out_tokens": 639, "run_cost_usd": null, "errors": 12}}};
 const tip = document.getElementById("tooltip");
 function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1;
   tip.style.left = (e.clientX + 12) + "px"; tip.style.top = (e.clientY - 10) + "px"; }
@@ -105,7 +107,7 @@ function barChart(el, rows, opts) {
     s += `<text class="val" x="${x}" y="${H - 4}" text-anchor="middle">${opts.tick(f * max)}</text>`;
   }
   rows.forEach((r, i) => {
-    const y = 10 + i * rowH, w = Math.max((r.v / max) * (W - padL - padR), 2);
+    const y = 10 + i * rowH, w = Math.max((r.v / max) * (W - padL - padR), 4);
     s += `<text class="lbl" x="${padL - 10}" y="${y + 15}" text-anchor="end">${r.name}</text>`;
     s += `<path d="M${padL},${y} h${w - 4} a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-${w - 4} z"
       fill="${opts.color}" data-tip="${r.name}: ${r.tip}"/>`;
@@ -135,17 +137,21 @@ function dumbbell(el, rows) {
   el.innerHTML = s;
 }
 
-const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}));
-const byTools = [...models].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
+const errRate = m => (m.tool_calling.errors + m.json_adherence.errors) /
+  (m.tool_calling.total + m.json_adherence.total);
+const models = Object.entries(DATA.summary).map(([id, s]) => ({id, ...s}))
+  .filter(m => errRate(m) < 0.99);   // drop models whose run never happened (dead id)
+const clean = models.filter(m => errRate(m) <= 0.1);   // charts: clean runs only
+const byTools = [...clean].sort((a, b) => b.tool_calling.pass - a.tool_calling.pass);
 barChart(document.getElementById("chart-tools"),
   byTools.map(m => ({name: m.label, v: m.tool_calling.pass, tip: `${m.tool_calling.pass}/${m.tool_calling.total}`})),
   {color: css("--series-1"), max: 20, tick: v => v.toFixed(0), label: "Tool-calling accuracy by model"});
 
 dumbbell(document.getElementById("chart-json"),
-  [...models].sort((a, b) => b.json_adherence.content_ok - a.json_adherence.content_ok)
+  [...clean].sort((a, b) => b.json_adherence.content_ok - a.json_adherence.content_ok)
     .map(m => ({name: m.label, strict: m.json_adherence.pass, content: m.json_adherence.content_ok})));
 
-const byLat = [...models].filter(m => m.tool_calling.median_latency_ms)
+const byLat = [...clean].filter(m => m.tool_calling.median_latency_ms)
   .sort((a, b) => a.tool_calling.median_latency_ms - b.tool_calling.median_latency_ms);
 barChart(document.getElementById("chart-latency"),
   byLat.map(m => ({name: m.label, v: m.tool_calling.median_latency_ms, tip: `${(m.tool_calling.median_latency_ms / 1000).toFixed(1)}s`})),
@@ -153,10 +159,11 @@ barChart(document.getElementById("chart-latency"),
 
 document.getElementById("table").innerHTML =
   `<tr><th>model</th><th>tools</th><th>json strict</th><th>json content</th><th>median latency</th><th>run cost</th></tr>` +
-  models.map(m => `<tr><td>${m.label}</td><td>${m.tool_calling.pass}/${m.tool_calling.total}</td>` +
+  models.map(m => `<tr><td>${m.label}${errRate(m) > 0.1 ? " ⚠" : ""}</td><td>${m.tool_calling.pass}/${m.tool_calling.total}</td>` +
     `<td>${m.json_adherence.pass}/12</td><td>${m.json_adherence.content_ok}/12</td>` +
     `<td>${m.tool_calling.median_latency_ms ? (m.tool_calling.median_latency_ms/1000).toFixed(1) + "s" : "n/a"}</td>` +
-    `<td>${m.run_cost_usd != null ? "$" + m.run_cost_usd.toFixed(3) : "n/a"}</td></tr>`).join("");
+    `<td>${m.run_cost_usd != null ? "$" + m.run_cost_usd.toFixed(3) : "n/a"}</td></tr>` +
+    (errRate(m) > 0.1 ? `<tr><td colspan=6 style="color:var(--text-secondary);font-size:.8rem">⚠ ${m.tool_calling.errors + m.json_adherence.errors}/32 calls failed on provider rate limits — failed calls count as misses above, so these numbers understate the model. Excluded from charts; will be re-run.</td></tr>` : "")).join("");
 
 document.querySelectorAll("[data-tip]").forEach(n => {
   n.addEventListener("mousemove", e => showTip(e, n.dataset.tip));

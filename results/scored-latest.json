@@ -6,11 +6,13 @@
    "tool_calling": {
     "pass": 20,
     "total": 20,
+    "errors": 0,
     "median_latency_ms": 2354
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
+    "errors": 0,
     "median_latency_ms": 2089,
     "content_ok": 12
    },
@@ -24,11 +26,13 @@
    "tool_calling": {
     "pass": 19,
     "total": 20,
+    "errors": 0,
     "median_latency_ms": 2193
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
+    "errors": 0,
     "median_latency_ms": 1626,
     "content_ok": 12
    },
@@ -42,11 +46,13 @@
    "tool_calling": {
     "pass": 19,
     "total": 20,
+    "errors": 0,
     "median_latency_ms": 1301
    },
    "json_adherence": {
     "pass": 1,
     "total": 12,
+    "errors": 0,
     "median_latency_ms": 808,
     "content_ok": 12
    },
@@ -60,11 +66,13 @@
    "tool_calling": {
     "pass": 0,
     "total": 20,
+    "errors": 20,
     "median_latency_ms": null
    },
    "json_adherence": {
     "pass": 0,
     "total": 12,
+    "errors": 12,
     "median_latency_ms": null,
     "content_ok": 0
    },
@@ -78,11 +86,13 @@
    "tool_calling": {
     "pass": 6,
     "total": 20,
+    "errors": 14,
     "median_latency_ms": 5074
    },
    "json_adherence": {
     "pass": 2,
     "total": 12,
+    "errors": 10,
     "median_latency_ms": 6832,
     "content_ok": 2
    },
@@ -96,11 +106,13 @@
    "tool_calling": {
     "pass": 16,
     "total": 20,
+    "errors": 3,
     "median_latency_ms": 2269
    },
    "json_adherence": {
     "pass": 3,
     "total": 12,
+    "errors": 9,
     "median_latency_ms": 858,
     "content_ok": 3
    },

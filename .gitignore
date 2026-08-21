@@ -1,3 +1,4 @@
 results/raw-*.json
 __pycache__/
 .venv
+.gstack/

@@ -123,6 +123,7 @@ def main() -> int:
             by_kind[kind] = {
                 "pass": ok,
                 "total": len(krows),
+                "errors": sum(1 for r in krows if "error" in r["score"]),
                 "median_latency_ms": round(statistics.median(lat)) if lat else None,
             }
             if kind == "json_adherence":
