@@ -1,0 +1,32 @@
+name: weekly-refresh
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - name: Run benchmark
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          uv sync
+          uv run python -m bench.run --out results/raw-weekly.json
+          uv run python -m bench.score --raw results/raw-weekly.json
+          uv run python -m bench.report
+      - name: Commit refreshed report
+        run: |
+          git config user.name "bench-bot"
+          git config user.email "actions@github.com"
+          git add docs/index.html results/scored-latest.json
+          git diff --cached --quiet || git commit -m "chore: weekly benchmark refresh"
+          git push
