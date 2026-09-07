@@ -4,21 +4,21 @@
   "claude-opus-5": {
    "label": "Claude Opus 5",
    "tool_calling": {
-    "pass": 19,
+    "pass": 20,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 2050
+    "median_latency_ms": 2998
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 1964,
+    "median_latency_ms": 2522,
     "content_ok": 12
    },
    "in_tokens": 25525,
-   "out_tokens": 3618,
-   "run_cost_usd": 0.2181,
+   "out_tokens": 3695,
+   "run_cost_usd": 0.22,
    "errors": 0
   },
   "claude-sonnet-5": {
@@ -27,38 +27,38 @@
     "pass": 20,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 2728
+    "median_latency_ms": 2190
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 2241,
+    "median_latency_ms": 1474,
     "content_ok": 12
    },
    "in_tokens": 26885,
-   "out_tokens": 3528,
-   "run_cost_usd": 0.1336,
+   "out_tokens": 3689,
+   "run_cost_usd": 0.136,
    "errors": 0
   },
   "claude-haiku-4-5": {
    "label": "Claude Haiku 4.5",
    "tool_calling": {
-    "pass": 19,
+    "pass": 20,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 1050
+    "median_latency_ms": 1293
    },
    "json_adherence": {
     "pass": 0,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 808,
+    "median_latency_ms": 908,
     "content_ok": 12
    },
    "in_tokens": 24666,
-   "out_tokens": 2629,
-   "run_cost_usd": 0.0378,
+   "out_tokens": 2695,
+   "run_cost_usd": 0.0381,
    "errors": 0
   },
   "gemini-pro-latest": {
@@ -136,10 +136,10 @@
      }
     }
    ],
-   "text": "I'll check the current weather in Berlin for you.",
-   "latency_ms": 1925.6225750000056,
+   "text": "I'll check that for you.",
+   "latency_ms": 2719.4564530000066,
    "in_tokens": 1116,
-   "out_tokens": 92,
+   "out_tokens": 84,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -162,10 +162,10 @@
      }
     }
    ],
-   "text": "I'll check that for you.",
-   "latency_ms": 2181.875387000005,
+   "text": "",
+   "latency_ms": 2891.296105999999,
    "in_tokens": 1118,
-   "out_tokens": 86,
+   "out_tokens": 77,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -190,7 +190,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1978.7274649999915,
+   "latency_ms": 2041.306911999996,
    "in_tokens": 1122,
    "out_tokens": 94,
    "score": {
@@ -217,7 +217,7 @@
     }
    ],
    "text": "I'll search for flights from Berlin (BER) to Lisbon (LIS) on that date.",
-   "latency_ms": 2443.8096909999986,
+   "latency_ms": 3214.5478900000057,
    "in_tokens": 1127,
    "out_tokens": 132,
    "score": {
@@ -245,7 +245,7 @@
     }
    ],
    "text": "I'll search for nonstop flights from Frankfurt to JFK on that date.",
-   "latency_ms": 2086.4266300000054,
+   "latency_ms": 2277.6597770000108,
    "in_tokens": 1136,
    "out_tokens": 152,
    "score": {
@@ -272,7 +272,7 @@
     }
    ],
    "text": "I'll set that reminder for you.",
-   "latency_ms": 1818.1378689999974,
+   "latency_ms": 2486.2512610000067,
    "in_tokens": 1125,
    "out_tokens": 94,
    "score": {
@@ -298,10 +298,10 @@
      }
     }
    ],
-   "text": "I'll query the orders database for you.",
-   "latency_ms": 1875.2252209999938,
+   "text": "I'll query the orders database with those filters.",
+   "latency_ms": 2593.8882089999993,
    "in_tokens": 1125,
-   "out_tokens": 107,
+   "out_tokens": 109,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -325,7 +325,7 @@
     }
    ],
    "text": "I'll query the orders database with those filters.",
-   "latency_ms": 1801.6841889999996,
+   "latency_ms": 1702.3858480000058,
    "in_tokens": 1121,
    "out_tokens": 94,
    "score": {
@@ -351,10 +351,10 @@
      }
     }
    ],
-   "text": "I'll convert that for you.",
-   "latency_ms": 1800.548452000001,
+   "text": "",
+   "latency_ms": 1933.8720850000045,
    "in_tokens": 1116,
-   "out_tokens": 111,
+   "out_tokens": 101,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -379,9 +379,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 1977.759465999995,
+   "latency_ms": 2902.7754170000007,
    "in_tokens": 1121,
-   "out_tokens": 124,
+   "out_tokens": 129,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -397,10 +397,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that Sydney or Melbourne is the capital \u2014 Canberra was purpose-built as a compromise between those two rival cities and officially became the capital in 1913. It's located in the Australian Capital Territory (ACT), roughly halfway between Sydney and Melbourne.",
-   "latency_ms": 2178.5140650000017,
+   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that Sydney or Melbourne is the capital \u2014 Canberra was purpose-built as a compromise between those two rival cities and officially became the capital in 1913. It's located in the Australian Capital Territory, roughly halfway between Sydney and Melbourne.",
+   "latency_ms": 3093.825665000011,
    "in_tokens": 1112,
-   "out_tokens": 112,
+   "out_tokens": 108,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -416,10 +416,10 @@
    "kind": "tool_calling",
    "case_id": "tc12",
    "calls": [],
-   "text": "100 \u00b0F is about **37.8 \u00b0C**.\n\nThe conversion is (\u00b0F \u2212 32) \u00d7 5/9, so (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78 \u00b0C \u2014 right around normal human body temperature.",
-   "latency_ms": 2651.883197999993,
+   "text": "100 \u00b0F is about **37.8 \u00b0C**.\n\nThe conversion is: (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78 \u00b0C \u2014 which, fittingly, is right around normal human body temperature.",
+   "latency_ms": 3350.1904769999983,
    "in_tokens": 1122,
-   "out_tokens": 165,
+   "out_tokens": 127,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -435,10 +435,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I can look up flights, but I need a couple of details first \u2014 and one important caveat:\n\n1. **Where are you departing from?** (city or airport code)\n2. **What date?**\n3. **Tokyo has two airports** \u2014 Haneda (HND) or Narita (NRT)? Or should I check both?\n4. Any preference on **max stops**?\n\nAlso worth flagging: I can *search* flights, but I don't have a tool to actually book or pay for one. I can find you the options and details, and you'd complete the booking yourself. Want me to also set a reminder for anything related?",
-   "latency_ms": 3666.252611999994,
+   "text": "I can help you find flights, though I should flag upfront that I can only *search* for flights \u2014 I can't complete a booking.\n\nTo run a search I need a couple of things:\n\n1. **Where are you flying from?** (city or airport code)\n2. **What date?** (or a rough range, and I'll check a specific day)\n3. **Which Tokyo airport?** Haneda (HND) is closer to the city center; Narita (NRT) often has cheaper long-haul fares. I can check either or both.\n4. **Any limit on stops?** (nonstop only, max 1, etc.)\n\nGive me those and I'll pull up the options.",
+   "latency_ms": 5597.287825999999,
    "in_tokens": 1115,
-   "out_tokens": 180,
+   "out_tokens": 294,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -453,23 +453,15 @@
    "model": "claude-opus-5",
    "kind": "tool_calling",
    "case_id": "tc14",
-   "calls": [
-    {
-     "tool": "query_orders",
-     "args": {
-      "status": "pending",
-      "limit": 100
-     }
-    }
-   ],
-   "text": "",
-   "latency_ms": 5672.029331999994,
+   "calls": [],
+   "text": "I'm not able to do that \u2014 I can only *read* from the orders database (filter by customer email, status, or total); there's no tool available to me that modifies or cancels an order.\n\nA couple of options:\n\n- **You cancel it directly** in your account's order page, or by contacting support and quoting order #4711.\n- **I can look it up** to confirm it's still in `pending` status (and therefore still cancellable) \u2014 just send me the email address on the order, since I can't query by order number alone.\n\nWant me to check its status?",
+   "latency_ms": 6980.540497999997,
    "in_tokens": 1115,
-   "out_tokens": 351,
+   "out_tokens": 373,
    "score": {
-    "pass": false,
+    "pass": true,
     "expected_n": 0,
-    "actual_n": 1
+    "actual_n": 0
    },
    "tags": [
     "no-matching-tool",
@@ -497,7 +489,7 @@
     }
    ],
    "text": "I'll check both cities for you.",
-   "latency_ms": 2185.7144889999918,
+   "latency_ms": 3711.166042000002,
    "in_tokens": 1125,
    "out_tokens": 157,
    "score": {
@@ -532,7 +524,7 @@
     }
    ],
    "text": "I'll convert both amounts for you.",
-   "latency_ms": 2577.7516710000014,
+   "latency_ms": 3298.5287440000093,
    "in_tokens": 1127,
    "out_tokens": 213,
    "score": {
@@ -549,10 +541,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I can set that up \u2014 I just need one detail: I don't have access to today's date, so I can't compute \"tomorrow\" reliably.\n\nWhat's tomorrow's date (YYYY-MM-DD)? I'll assume 9:00 AM unless you meant 9 PM.",
-   "latency_ms": 5283.808421999993,
+   "text": "I can set that up, but I need one detail: I don't have access to today's date, so I can't resolve \"tomorrow\" into an absolute date.\n\nWhat's tomorrow's date? And just to confirm \u2014 9:00 AM?",
+   "latency_ms": 4413.987410999994,
    "in_tokens": 1125,
-   "out_tokens": 320,
+   "out_tokens": 239,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -577,8 +569,8 @@
      }
     }
    ],
-   "text": "I'll query the orders database for delivered orders above \u20ac200.",
-   "latency_ms": 1828.806478000004,
+   "text": "",
+   "latency_ms": 2845.4989909999995,
    "in_tokens": 1132,
    "out_tokens": 92,
    "score": {
@@ -605,10 +597,10 @@
      }
     }
    ],
-   "text": "I'll search for those flights.",
-   "latency_ms": 2014.4121470000016,
+   "text": "",
+   "latency_ms": 3492.646331000003,
    "in_tokens": 1133,
-   "out_tokens": 135,
+   "out_tokens": 147,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -631,10 +623,10 @@
      }
     }
    ],
-   "text": "I'll check the current weather in Oslo for you.",
-   "latency_ms": 1808.4869470000058,
+   "text": "I'll check Oslo's weather \u2014 note my tool gives current conditions, not a forecast, but it's a good proxy.",
+   "latency_ms": 3701.642704000008,
    "in_tokens": 1130,
-   "out_tokens": 92,
+   "out_tokens": 163,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -649,7 +641,7 @@
    "kind": "json_adherence",
    "case_id": "js01",
    "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.9}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.5}]}",
-   "latency_ms": 1983.30005199999,
+   "latency_ms": 2486.173211999997,
    "in_tokens": 357,
    "out_tokens": 105,
    "score": {
@@ -667,8 +659,8 @@
    "model": "claude-opus-5",
    "kind": "json_adherence",
    "case_id": "js02",
-   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.9}",
-   "latency_ms": 2238.435093000007,
+   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.92}",
+   "latency_ms": 1353.4776369999975,
    "in_tokens": 250,
    "out_tokens": 28,
    "score": {
@@ -687,10 +679,10 @@
    "model": "claude-opus-5",
    "kind": "json_adherence",
    "case_id": "js03",
-   "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
-   "latency_ms": 1538.6896109999952,
+   "text": "{\"name\":\"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\",\"email\":\"jose.mueller@uni-berlin.de\",\"phone\":\"+49 30 1234567\"}",
+   "latency_ms": 1547.4324179999996,
    "in_tokens": 224,
-   "out_tokens": 60,
+   "out_tokens": 58,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -708,7 +700,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
-   "latency_ms": 1882.1655750000018,
+   "latency_ms": 2252.7857420000005,
    "in_tokens": 231,
    "out_tokens": 60,
    "score": {
@@ -727,7 +719,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "{\"products\": [], \"sentiment\": \"positive\"}",
-   "latency_ms": 1413.236620999996,
+   "latency_ms": 1140.0345420000094,
    "in_tokens": 198,
    "out_tokens": 19,
    "score": {
@@ -746,10 +738,10 @@
    "model": "claude-opus-5",
    "kind": "json_adherence",
    "case_id": "js06",
-   "text": "{\"topic\":\"Q3 planning\",\"action_items\":[{\"owner\":\"Maria\",\"task\":\"Own the migration\",\"due\":\"Sept 30\"},{\"owner\":\"Tom\",\"task\":\"Own hiring\",\"due\":\"Oct 15\"}],\"decisions\":[\"Budget approved\",\"Next sync scheduled for Friday\"]}",
-   "latency_ms": 1945.4884570000104,
+   "text": "{\"topic\": \"Q3 planning\", \"action_items\": [{\"owner\": \"Maria\", \"task\": \"Own the migration\", \"due\": \"Sept 30\"}, {\"owner\": \"Tom\", \"task\": \"Own hiring\", \"due\": \"Oct 15\"}], \"decisions\": [\"Budget approved\", \"Next sync scheduled for Friday\"]}",
+   "latency_ms": 2557.037875000006,
    "in_tokens": 326,
-   "out_tokens": 106,
+   "out_tokens": 114,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -767,7 +759,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
-   "latency_ms": 1654.957852999999,
+   "latency_ms": 1293.5863579999989,
    "in_tokens": 216,
    "out_tokens": 22,
    "score": {
@@ -787,7 +779,7 @@
    "kind": "json_adherence",
    "case_id": "js08",
    "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
-   "latency_ms": 1602.5371309999912,
+   "latency_ms": 2988.3500159999985,
    "in_tokens": 255,
    "out_tokens": 65,
    "score": {
@@ -806,7 +798,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side.\"], \"vegan\": false}",
-   "latency_ms": 2667.778818000002,
+   "latency_ms": 3233.505093000005,
    "in_tokens": 269,
    "out_tokens": 75,
    "score": {
@@ -826,9 +818,9 @@
    "kind": "json_adherence",
    "case_id": "js10",
    "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
-   "latency_ms": 3012.495990000005,
+   "latency_ms": 3660.600360999993,
    "in_tokens": 235,
-   "out_tokens": 89,
+   "out_tokens": 84,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -846,7 +838,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
-   "latency_ms": 9734.007260999988,
+   "latency_ms": 2804.827797999991,
    "in_tokens": 220,
    "out_tokens": 45,
    "score": {
@@ -866,7 +858,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
-   "latency_ms": 2174.431991000006,
+   "latency_ms": 2774.867590999989,
    "in_tokens": 281,
    "out_tokens": 41,
    "score": {
@@ -894,7 +886,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1366.9787019999972,
+   "latency_ms": 2192.9203950000156,
    "in_tokens": 1184,
    "out_tokens": 51,
    "score": {
@@ -920,7 +912,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2436.8769569999954,
+   "latency_ms": 1837.5147470000002,
    "in_tokens": 1186,
    "out_tokens": 77,
    "score": {
@@ -947,7 +939,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2867.777228999998,
+   "latency_ms": 1780.8887460000165,
    "in_tokens": 1190,
    "out_tokens": 94,
    "score": {
@@ -974,7 +966,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2731.6932590000106,
+   "latency_ms": 1783.8406099999986,
    "in_tokens": 1195,
    "out_tokens": 100,
    "score": {
@@ -1002,9 +994,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 3253.8599129999993,
+   "latency_ms": 2186.821764000001,
    "in_tokens": 1204,
-   "out_tokens": 179,
+   "out_tokens": 171,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1029,9 +1021,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2440.120754000006,
+   "latency_ms": 1928.230644999985,
    "in_tokens": 1193,
-   "out_tokens": 82,
+   "out_tokens": 117,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1056,9 +1048,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2725.0347729999903,
+   "latency_ms": 1745.9899320000147,
    "in_tokens": 1193,
-   "out_tokens": 95,
+   "out_tokens": 121,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1082,7 +1074,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2581.834901999997,
+   "latency_ms": 2769.700467000007,
    "in_tokens": 1189,
    "out_tokens": 80,
    "score": {
@@ -1109,7 +1101,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2615.106351999998,
+   "latency_ms": 2611.0299089999953,
    "in_tokens": 1184,
    "out_tokens": 101,
    "score": {
@@ -1136,7 +1128,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2998.529435000009,
+   "latency_ms": 2018.7741990000063,
    "in_tokens": 1189,
    "out_tokens": 121,
    "score": {
@@ -1154,10 +1146,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that Sydney or Melbourne holds this title, since they're much larger and more well-known internationally, but Canberra was purpose-built to serve as the capital as a compromise between the two rival cities back when Australia federated in 1901.\n\nLet me know if you'd like more details, such as its population, history, or notable landmarks!",
-   "latency_ms": 2422.508289999996,
+   "text": "The capital of Australia is **Canberra**.\n\nWhile Sydney is Australia's largest and most well-known city, Canberra was purpose-built to serve as the nation's capital. It's located in the Australian Capital Territory (ACT), which is a separate federal district \u2014 a compromise reached in the early 1900s between Sydney and Melbourne, which were rivals for the honor of being the capital.\n\nLet me know if you'd like more details, such as weather in Canberra or anything else!",
+   "latency_ms": 3706.680680000005,
    "in_tokens": 1180,
-   "out_tokens": 126,
+   "out_tokens": 153,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1173,10 +1165,10 @@
    "kind": "tool_calling",
    "case_id": "tc12",
    "calls": [],
-   "text": "100\u00b0F converts to approximately **37.8\u00b0C**.\n\nFormula used: \u00b0C = (\u00b0F \u2212 32) \u00d7 5/9 = (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78\u00b0C",
-   "latency_ms": 3412.513911000005,
+   "text": "100\u00b0F is equal to approximately **37.8\u00b0C**.\n\nFormula: \u00b0C = (\u00b0F \u2212 32) \u00d7 5/9 = (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78\u00b0C",
+   "latency_ms": 2068.81710799999,
    "in_tokens": 1190,
-   "out_tokens": 175,
+   "out_tokens": 164,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1192,10 +1184,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I'd be happy to help you search for flights to Tokyo! To do that, I need a few more details:\n\n1. **Origin airport** \u2014 Which city/airport are you flying from? (please provide the IATA code or city name)\n2. **Travel date** \u2014 What date would you like to depart? (YYYY-MM-DD)\n3. **Airport preference** \u2014 Tokyo has two main airports: **NRT** (Narita) and **HND** (Haneda). Do you have a preference, or should I check both?\n4. **Stops** \u2014 Are you okay with layovers, or do you want nonstop only?\n\nAlso note: I can **search** available flights for you, but actual ticket purchase/booking would need to be completed separately (e.g., through the airline or a booking site) \u2014 I can find the best options for you though!\n\nOnce I have the origin and date, I'll pull up some flight options.",
-   "latency_ms": 5487.028598999998,
+   "text": "I'd be happy to help you search for flights to Tokyo! However, I need a bit more information to run the search:\n\n1. **Origin airport** \u2013 Which city/airport will you be departing from? (Please provide the IATA code if you know it, e.g., BER, JFK, LHR)\n2. **Departure date** \u2013 What date would you like to fly? (ISO format, e.g., 2025-07-15)\n3. **Destination in Tokyo** \u2013 Tokyo has two main airports: **NRT** (Narita) or **HND** (Haneda). Do you have a preference, or should I check both?\n4. **Stops** \u2013 Do you have a preference for nonstop flights, or are one/more stops okay?\n\nAlso, please note: I can **search** for available flights, but I don't have the ability to actually complete a booking/purchase \u2014 I can help you find options and pricing, and then you'd complete the booking through the airline or travel site.\n\nOnce you give me the origin and date, I'll pull up some options!",
+   "latency_ms": 4112.8434880000095,
    "in_tokens": 1183,
-   "out_tokens": 354,
+   "out_tokens": 311,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1211,10 +1203,10 @@
    "kind": "tool_calling",
    "case_id": "tc14",
    "calls": [],
-   "text": "I'm not able to cancel orders directly \u2014 the tools I have access to only let me *query* order information (e.g., look up orders by email, status, or minimum total), not modify or cancel them.\n\nHere's what I'd suggest:\n\n1. **Check the order status first** \u2013 if you can give me the customer email associated with the order, I can look up order #4711 (or your pending orders) to confirm its details.\n2. **Cancel it** \u2013 for the actual cancellation, you'll need to use your account's order management page or contact customer support directly, as that action requires a different system than what I have access to.\n\nWould you like me to pull up the order details for you in the meantime?",
-   "latency_ms": 3251.3912000000005,
+   "text": "I'm sorry, but I don't have the ability to cancel orders. My available tools only let me:\n\n- **Look up orders** (by customer email, status, or minimum total) \u2014 read-only, no ID-based lookup or cancellation\n- Check weather, search flights, convert currency, or set reminders\n\nSince cancelling an order isn't something I can execute, you'll need to do this through the store's order management page or customer support channel.\n\nIf it helps, I *can* look up the order to confirm its current status (e.g., search by your email with status \"pending\"). Would you like me to do that, or is there anything else I can assist with?",
+   "latency_ms": 5577.331173000004,
    "in_tokens": 1183,
-   "out_tokens": 200,
+   "out_tokens": 375,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1246,9 +1238,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 3046.6185789999968,
+   "latency_ms": 2677.459083999992,
    "in_tokens": 1193,
-   "out_tokens": 163,
+   "out_tokens": 146,
    "score": {
     "pass": true,
     "expected_n": 2,
@@ -1281,9 +1273,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 3438.4893269999993,
+   "latency_ms": 2353.9575780000064,
    "in_tokens": 1195,
-   "out_tokens": 219,
+   "out_tokens": 218,
    "score": {
     "pass": true,
     "expected_n": 2,
@@ -1298,10 +1290,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I don't have access to today's date, so I can't calculate \"tomorrow\" automatically. Could you tell me the exact date you'd like the reminder set for (and confirm 9:00 AM)? For example: \"2025-06-15T09:00\".",
-   "latency_ms": 2688.2476389999965,
+   "text": "I'd be happy to set that reminder, but I don't have access to today's date/time to calculate \"tomorrow\" accurately. Could you confirm the exact date you'd like for the dentist appointment reminder (in YYYY-MM-DD format), along with confirming 9:00 AM is correct?",
+   "latency_ms": 2235.7572870000126,
    "in_tokens": 1193,
-   "out_tokens": 230,
+   "out_tokens": 170,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1327,9 +1319,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2379.4561670000007,
+   "latency_ms": 1674.859209999994,
    "in_tokens": 1200,
-   "out_tokens": 73,
+   "out_tokens": 119,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1355,7 +1347,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1968.2104320000064,
+   "latency_ms": 1779.5434679999858,
    "in_tokens": 1201,
    "out_tokens": 125,
    "score": {
@@ -1381,9 +1373,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 3268.8088929999994,
+   "latency_ms": 2475.921657000015,
    "in_tokens": 1198,
-   "out_tokens": 157,
+   "out_tokens": 151,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1398,7 +1390,7 @@
    "kind": "json_adherence",
    "case_id": "js01",
    "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.90}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.50}]}",
-   "latency_ms": 2522.6581229999993,
+   "latency_ms": 1668.5400140000013,
    "in_tokens": 357,
    "out_tokens": 105,
    "score": {
@@ -1417,7 +1409,7 @@
    "kind": "json_adherence",
    "case_id": "js02",
    "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.9}",
-   "latency_ms": 2060.843742999992,
+   "latency_ms": 1252.3985020000055,
    "in_tokens": 250,
    "out_tokens": 28,
    "score": {
@@ -1437,7 +1429,7 @@
    "kind": "json_adherence",
    "case_id": "js03",
    "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
-   "latency_ms": 2464.150871000001,
+   "latency_ms": 1485.721247000015,
    "in_tokens": 224,
    "out_tokens": 60,
    "score": {
@@ -1457,7 +1449,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
-   "latency_ms": 2448.262335999999,
+   "latency_ms": 1364.6106900000063,
    "in_tokens": 231,
    "out_tokens": 60,
    "score": {
@@ -1476,7 +1468,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "{\"products\": [], \"sentiment\": \"positive\"}",
-   "latency_ms": 1286.7191019999923,
+   "latency_ms": 1229.1759960000093,
    "in_tokens": 198,
    "out_tokens": 19,
    "score": {
@@ -1495,10 +1487,10 @@
    "model": "claude-sonnet-5",
    "kind": "json_adherence",
    "case_id": "js06",
-   "text": "{\"topic\": \"Q3 Planning\", \"action_items\": [{\"owner\": \"Maria\", \"task\": \"Own the migration\", \"due\": \"Sept 30\"}, {\"owner\": \"Tom\", \"task\": \"Own hiring\", \"due\": \"Oct 15\"}], \"decisions\": [\"Budget approved\", \"Next sync scheduled for Friday\"]}",
-   "latency_ms": 2729.1838109999985,
+   "text": "{\"topic\":\"Q3 planning\",\"action_items\":[{\"owner\":\"Maria\",\"task\":\"Own the migration\",\"due\":\"Sept 30\"},{\"owner\":\"Tom\",\"task\":\"Own hiring\",\"due\":\"Oct 15\"}],\"decisions\":[\"Budget approved\",\"Next sync scheduled for Friday\"]}",
+   "latency_ms": 1807.661386999996,
    "in_tokens": 326,
-   "out_tokens": 115,
+   "out_tokens": 106,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -1516,7 +1508,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
-   "latency_ms": 1969.4960540000038,
+   "latency_ms": 2370.2352650000194,
    "in_tokens": 216,
    "out_tokens": 22,
    "score": {
@@ -1536,7 +1528,7 @@
    "kind": "json_adherence",
    "case_id": "js08",
    "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
-   "latency_ms": 1367.8692179999957,
+   "latency_ms": 1463.1062420000092,
    "in_tokens": 255,
    "out_tokens": 65,
    "score": {
@@ -1555,7 +1547,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side\"], \"vegan\": false}",
-   "latency_ms": 2647.562381,
+   "latency_ms": 2495.935664000001,
    "in_tokens": 269,
    "out_tokens": 75,
    "score": {
@@ -1575,9 +1567,9 @@
    "kind": "json_adherence",
    "case_id": "js10",
    "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
-   "latency_ms": 1670.149680999998,
+   "latency_ms": 1801.1383500000022,
    "in_tokens": 235,
-   "out_tokens": 91,
+   "out_tokens": 98,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -1595,7 +1587,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
-   "latency_ms": 2206.5945399999973,
+   "latency_ms": 1377.9952419999972,
    "in_tokens": 220,
    "out_tokens": 45,
    "score": {
@@ -1615,7 +1607,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
-   "latency_ms": 2274.719392999998,
+   "latency_ms": 1279.776962999989,
    "in_tokens": 281,
    "out_tokens": 41,
    "score": {
@@ -1643,7 +1635,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1015.6922110000011,
+   "latency_ms": 1172.708569000008,
    "in_tokens": 1120,
    "out_tokens": 54,
    "score": {
@@ -1669,7 +1661,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 847.878202000004,
+   "latency_ms": 1215.960631999991,
    "in_tokens": 1118,
    "out_tokens": 72,
    "score": {
@@ -1696,7 +1688,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1126.8196169999953,
+   "latency_ms": 1099.6712829999922,
    "in_tokens": 1123,
    "out_tokens": 73,
    "score": {
@@ -1723,7 +1715,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 951.5155550000003,
+   "latency_ms": 1269.721445000016,
    "in_tokens": 1128,
    "out_tokens": 95,
    "score": {
@@ -1751,7 +1743,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1009.6388789999935,
+   "latency_ms": 1372.009227999996,
    "in_tokens": 1135,
    "out_tokens": 114,
    "score": {
@@ -1778,7 +1770,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 942.659080999988,
+   "latency_ms": 1248.6571809999987,
    "in_tokens": 1129,
    "out_tokens": 81,
    "score": {
@@ -1805,7 +1797,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1345.9480269999915,
+   "latency_ms": 1436.8409690000021,
    "in_tokens": 1128,
    "out_tokens": 90,
    "score": {
@@ -1831,7 +1823,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 951.7989609999944,
+   "latency_ms": 1168.326406999995,
    "in_tokens": 1123,
    "out_tokens": 77,
    "score": {
@@ -1858,7 +1850,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1344.5910099999878,
+   "latency_ms": 1175.6215139999995,
    "in_tokens": 1121,
    "out_tokens": 92,
    "score": {
@@ -1885,7 +1877,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 865.5494510000068,
+   "latency_ms": 1285.9770290000085,
    "in_tokens": 1123,
    "out_tokens": 95,
    "score": {
@@ -1903,10 +1895,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**. \n\nCanberra is located in the Australian Capital Territory (ACT) and was purpose-built as the nation's capital in the early 20th century. It's situated between the two largest cities, Sydney and Melbourne, and is home to the Australian Parliament House and other important government institutions.",
-   "latency_ms": 1084.374796000006,
+   "text": "The capital of Australia is **Canberra**. \n\nIt's located in the Australian Capital Territory (ACT) and was purpose-built as the capital city in the early 20th century as a compromise between rivals Sydney and Melbourne. Canberra is home to important government institutions including Parliament House, and it's known for its planned layout and green spaces.",
+   "latency_ms": 1404.501874999994,
    "in_tokens": 1117,
-   "out_tokens": 77,
+   "out_tokens": 80,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1921,24 +1913,15 @@
    "model": "claude-haiku-4-5",
    "kind": "tool_calling",
    "case_id": "tc12",
-   "calls": [
-    {
-     "tool": "convert_currency",
-     "args": {
-      "amount": 100,
-      "from_currency": "fahrenheit",
-      "to_currency": "celsius"
-     }
-    }
-   ],
-   "text": "",
-   "latency_ms": 1209.8711870000045,
+   "calls": [],
+   "text": "I don't have a direct temperature conversion tool available, but I can help you with this calculation!\n\nTo convert 100\u00b0F to Celsius, you use the formula:\n**C = (F - 32) \u00d7 5/9**\n\nSo: (100 - 32) \u00d7 5/9 = 68 \u00d7 5/9 = 340/9 \u2248 **37.78\u00b0C**\n\n100\u00b0F is approximately **37.8\u00b0C** (or about 38\u00b0C).",
+   "latency_ms": 1581.3262329999986,
    "in_tokens": 1122,
-   "out_tokens": 93,
+   "out_tokens": 119,
    "score": {
-    "pass": false,
+    "pass": true,
     "expected_n": 0,
-    "actual_n": 1
+    "actual_n": 0
    },
    "tags": [
     "no-tool",
@@ -1950,10 +1933,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I'd be happy to help you book a flight to Tokyo! To search for flights, I need a few more details:\n\n1. **Where are you flying from?** (city or airport code, e.g., BER for Berlin)\n2. **What date would you like to depart?** (in YYYY-MM-DD format, e.g., 2024-01-15)\n3. **Maximum number of stops?** (optional - 0 for direct, or specify a number)\n\nOnce you provide these details, I can search for available flights for you.",
-   "latency_ms": 1330.0101760000018,
+   "text": "I'd be happy to help you book a flight to Tokyo! To search for flights, I need a few more details:\n\n1. **Where are you flying from?** (Please provide the city name or airport code, e.g., BER for Berlin)\n2. **What date would you like to depart?** (Please provide in YYYY-MM-DD format, e.g., 2024-01-15)\n3. **Do you have a preference for the number of stops?** (Optional - 0 for direct flights, or any other number)\n\nOnce you provide these details, I can search for available flights for you.",
+   "latency_ms": 1883.4645200000182,
    "in_tokens": 1117,
-   "out_tokens": 130,
+   "out_tokens": 143,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1969,10 +1952,10 @@
    "kind": "tool_calling",
    "case_id": "tc14",
    "calls": [],
-   "text": "I don't have a function available to directly cancel orders. The tools I have access to only allow me to query orders in the database, but not to modify or cancel them.\n\nTo cancel your pending order #4711, you would need to:\n- Contact customer support directly\n- Use your account dashboard on the website/app if there's a cancel option available\n- Call the customer service phone number\n\nIf you'd like, I can help you query your orders to verify the details of order #4711 first. Would that be helpful?",
-   "latency_ms": 1733.2904670000034,
+   "text": "I don't have a function available to cancel orders directly. However, I can help you query your orders to confirm the details of order #4711.\n\nTo assist you further, I would need to know your email address associated with the order so I can look up the order details. Could you please provide:\n\n1. Your email address associated with the account\n2. Confirmation that you'd like to proceed with cancelling order #4711\n\nOnce you provide your email, I can retrieve the order information to verify it's pending and help you understand the next steps for cancellation.",
+   "latency_ms": 1828.4793020000052,
    "in_tokens": 1119,
-   "out_tokens": 116,
+   "out_tokens": 123,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -2004,7 +1987,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1456.5337919999877,
+   "latency_ms": 1423.5654109999984,
    "in_tokens": 1125,
    "out_tokens": 124,
    "score": {
@@ -2039,7 +2022,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1432.417361000006,
+   "latency_ms": 1818.8801830000045,
    "in_tokens": 1130,
    "out_tokens": 170,
    "score": {
@@ -2056,10 +2039,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I'd be happy to set a reminder for your dentist appointment tomorrow at 9 AM. However, I need to know today's date to calculate tomorrow's date. Could you please provide today's date or the specific date you'd like the reminder set for (in YYYY-MM-DD format)?",
-   "latency_ms": 949.4685700000076,
+   "text": "I'd be happy to set a reminder for your dentist appointment tomorrow at 9 AM. However, I need to know today's date to calculate tomorrow's date in the correct format (YYYY-MM-DD).\n\nCould you please provide today's date or the specific date and time you'd like the reminder set for (in the format YYYY-MM-DD, for example 2024-01-15)?",
+   "latency_ms": 1294.4653849999952,
    "in_tokens": 1123,
-   "out_tokens": 66,
+   "out_tokens": 91,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -2084,10 +2067,10 @@
      }
     }
    ],
-   "text": "Ich werde alle gelieferten Bestellungen mit einem Gesamtwert von \u00fcber 200 Euro abfragen.",
-   "latency_ms": 972.6424260000073,
+   "text": "Ich suche nach allen gelieferten Bestellungen \u00fcber 200 Euro f\u00fcr Sie.",
+   "latency_ms": 1292.1491399999923,
    "in_tokens": 1131,
-   "out_tokens": 103,
+   "out_tokens": 95,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -2113,7 +2096,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1098.664037000006,
+   "latency_ms": 965.7633070000031,
    "in_tokens": 1131,
    "out_tokens": 115,
    "score": {
@@ -2139,7 +2122,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 807.7624569999955,
+   "latency_ms": 1326.1244580000096,
    "in_tokens": 1125,
    "out_tokens": 71,
    "score": {
@@ -2156,7 +2139,7 @@
    "kind": "json_adherence",
    "case_id": "js01",
    "text": "```json\n{\n  \"invoice_id\": \"INV-2041\",\n  \"vendor\": \"ACME GmbH\",\n  \"date\": \"2026-07-03\",\n  \"items\": [\n    {\n      \"name\": \"Widget A\",\n      \"qty\": 3,\n      \"unit_price\": 19.90\n    },\n    {\n      \"name\": \"Widget B\",\n      \"qty\": 1,\n      \"unit_price\": 4.50\n    }\n  ]\n}\n```",
-   "latency_ms": 958.0004459999998,
+   "latency_ms": 1380.5871350000132,
    "in_tokens": 264,
    "out_tokens": 128,
    "score": {
@@ -2175,7 +2158,7 @@
    "kind": "json_adherence",
    "case_id": "js02",
    "text": "```json\n{\n  \"category\": \"performance\",\n  \"urgency\": \"high\",\n  \"confidence\": 0.95\n}\n```",
-   "latency_ms": 809.5850650000074,
+   "latency_ms": 842.1019130000218,
    "in_tokens": 178,
    "out_tokens": 37,
    "score": {
@@ -2195,7 +2178,7 @@
    "kind": "json_adherence",
    "case_id": "js03",
    "text": "```json\n{\n  \"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\",\n  \"email\": \"jose.mueller@uni-berlin.de\",\n  \"phone\": \"+49 30 1234567\"\n}\n```",
-   "latency_ms": 800.3085750000025,
+   "latency_ms": 908.5121729999912,
    "in_tokens": 163,
    "out_tokens": 61,
    "score": {
@@ -2215,7 +2198,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "```json\n{\n  \"recipient\": \"Anna Schmidt\",\n  \"street\": \"Hauptstr. 5\",\n  \"postal_code\": \"01099\",\n  \"city\": \"Dresden\",\n  \"country\": \"Germany\"\n}\n```",
-   "latency_ms": 942.3421129999952,
+   "latency_ms": 907.9745319999972,
    "in_tokens": 161,
    "out_tokens": 60,
    "score": {
@@ -2234,7 +2217,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "```json\n{\n  \"products\": [],\n  \"sentiment\": \"positive\"\n}\n```",
-   "latency_ms": 1027.5564000000088,
+   "latency_ms": 665.6507010000041,
    "in_tokens": 135,
    "out_tokens": 25,
    "score": {
@@ -2254,7 +2237,7 @@
    "kind": "json_adherence",
    "case_id": "js06",
    "text": "```json\n{\n  \"topic\": \"Q3 planning\",\n  \"action_items\": [\n    {\n      \"owner\": \"Maria\",\n      \"task\": \"migration\",\n      \"due\": \"Sept 30\"\n    },\n    {\n      \"owner\": \"Tom\",\n      \"task\": \"hiring\",\n      \"due\": \"Oct 15\"\n    }\n  ],\n  \"decisions\": [\n    \"Budget approved\"\n  ]\n}\n```",
-   "latency_ms": 999.8181949999889,
+   "latency_ms": 1284.0553230000182,
    "in_tokens": 234,
    "out_tokens": 112,
    "score": {
@@ -2274,7 +2257,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "```json\n{\"tone_rating\": 1, \"is_constructive\": false}\n```",
-   "latency_ms": 746.7201460000013,
+   "latency_ms": 1207.70292200001,
    "in_tokens": 151,
    "out_tokens": 24,
    "score": {
@@ -2294,7 +2277,7 @@
    "kind": "json_adherence",
    "case_id": "js08",
    "text": "```json\n{\n  \"timestamp\": \"2026-08-12T14:03:22Z\",\n  \"level\": \"ERROR\",\n  \"service\": \"payment-svc\",\n  \"message\": \"Connection pool exhausted\",\n  \"retries\": 3\n}\n```",
-   "latency_ms": 766.9463029999974,
+   "latency_ms": 1181.3721039999905,
    "in_tokens": 179,
    "out_tokens": 69,
    "score": {
@@ -2313,7 +2296,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "```json\n{\n  \"name\": \"Grandma's pancakes\",\n  \"ingredients\": [\n    \"2 cups flour\",\n    \"3 eggs\",\n    \"a pinch of salt\"\n  ],\n  \"steps\": [\n    \"Fry 5 minutes per side\"\n  ],\n  \"vegan\": false\n}\n```",
-   "latency_ms": 1143.2610049999994,
+   "latency_ms": 1188.9379069999961,
    "in_tokens": 190,
    "out_tokens": 86,
    "score": {
@@ -2333,7 +2316,7 @@
    "kind": "json_adherence",
    "case_id": "js10",
    "text": "```json\n{\"lat\": 41.7258, \"lon\": -49.9458}\n```",
-   "latency_ms": 626.2056249999972,
+   "latency_ms": 827.075782999998,
    "in_tokens": 164,
    "out_tokens": 26,
    "score": {
@@ -2353,7 +2336,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "```json\n{\n  \"eu_members\": [\"Germany\", \"France\", \"Spain\"],\n  \"non_eu\": [\"Switzerland\", \"Norway\"]\n}\n```",
-   "latency_ms": 670.3384199999931,
+   "latency_ms": 774.2238639999925,
    "in_tokens": 154,
    "out_tokens": 40,
    "score": {
@@ -2373,7 +2356,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "```json\n{\n  \"service\": \"ingest\",\n  \"replicas\": 2,\n  \"persistence\": false,\n  \"port\": 8080,\n  \"env\": \"prod\"\n}\n```",
-   "latency_ms": 805.8440880000006,
+   "latency_ms": 831.0101499999973,
    "in_tokens": 205,
    "out_tokens": 53,
    "score": {
@@ -2392,10 +2375,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc01",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "easy"
@@ -2405,10 +2388,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc02",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "easy",
@@ -2419,10 +2402,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc03",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "knowledge-resolution"
@@ -2432,10 +2415,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc04",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2445,10 +2428,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc05",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion",
@@ -2459,10 +2442,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc06",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2472,10 +2455,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc07",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "multi-arg"
@@ -2485,10 +2468,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc08",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "easy"
@@ -2498,10 +2481,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc09",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2511,10 +2494,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc10",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "number-parsing",
@@ -2525,10 +2508,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc11",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-tool",
@@ -2539,10 +2522,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc12",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-tool",
@@ -2553,10 +2536,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc13",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "underspecified",
@@ -2567,10 +2550,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc14",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-matching-tool",
@@ -2581,10 +2564,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc15",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "parallel"
@@ -2594,10 +2577,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc16",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "parallel"
@@ -2607,10 +2590,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc17",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "underspecified",
@@ -2622,10 +2605,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc18",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "multilingual"
@@ -2635,10 +2618,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc19",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2648,10 +2631,10 @@
    "model": "gemini-pro-latest",
    "kind": "tool_calling",
    "case_id": "tc20",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "indirect-intent"
@@ -2661,10 +2644,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js01",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "nested-array"
@@ -2674,10 +2657,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js02",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "enum",
@@ -2688,10 +2671,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js03",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "unicode",
@@ -2702,10 +2685,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js04",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "string-vs-number-trap"
@@ -2715,10 +2698,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js05",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "empty-array",
@@ -2729,10 +2712,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js06",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "nested-array",
@@ -2743,10 +2726,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js07",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "integer-bound",
@@ -2757,10 +2740,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js08",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "extraction"
@@ -2770,10 +2753,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js09",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "inference",
@@ -2784,10 +2767,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js10",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "arithmetic",
@@ -2798,10 +2781,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js11",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "knowledge-filter",
@@ -2812,10 +2795,10 @@
    "model": "gemini-pro-latest",
    "kind": "json_adherence",
    "case_id": "js12",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-latest:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "construction",
@@ -2866,10 +2849,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc04",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2893,10 +2876,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc06",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2906,10 +2889,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc07",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "multi-arg"
@@ -2919,10 +2902,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc08",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "easy"
@@ -2932,10 +2915,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc09",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -2945,10 +2928,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc10",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "number-parsing",
@@ -2959,10 +2942,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc11",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-tool",
@@ -2973,10 +2956,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc12",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-tool",
@@ -2987,10 +2970,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc13",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "underspecified",
@@ -3001,10 +2984,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc14",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "no-matching-tool",
@@ -3015,10 +2998,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc15",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "parallel"
@@ -3028,10 +3011,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc16",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "parallel"
@@ -3041,10 +3024,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc17",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "underspecified",
@@ -3056,10 +3039,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc18",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "multilingual"
@@ -3069,10 +3052,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc19",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "format-coercion"
@@ -3082,10 +3065,10 @@
    "model": "gemini-3.7-flash",
    "kind": "tool_calling",
    "case_id": "tc20",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "indirect-intent"
@@ -3095,10 +3078,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js01",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "nested-array"
@@ -3108,10 +3091,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js02",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "enum",
@@ -3122,10 +3105,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js03",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "unicode",
@@ -3136,10 +3119,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js04",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "string-vs-number-trap"
@@ -3149,10 +3132,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js05",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "empty-array",
@@ -3163,10 +3146,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js06",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "nested-array",
@@ -3177,10 +3160,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js07",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "integer-bound",
@@ -3191,10 +3174,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js08",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "extraction"
@@ -3204,10 +3187,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js09",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "inference",
@@ -3218,10 +3201,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js10",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "arithmetic",
@@ -3232,10 +3215,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js11",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "knowledge-filter",
@@ -3246,10 +3229,10 @@
    "model": "gemini-3.7-flash",
    "kind": "json_adherence",
    "case_id": "js12",
-   "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
    "score": {
     "pass": false,
-    "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent?key=AIzaSyBII-Yn9JINZpYkiOc21bDDxyjkPJibGCk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
    },
    "tags": [
     "construction",
