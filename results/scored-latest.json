@@ -7,18 +7,18 @@
     "pass": 20,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 2700
+    "median_latency_ms": 2473
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 2378,
+    "median_latency_ms": 2224,
     "content_ok": 12
    },
    "in_tokens": 25525,
-   "out_tokens": 3700,
-   "run_cost_usd": 0.2201,
+   "out_tokens": 3502,
+   "run_cost_usd": 0.2152,
    "errors": 0
   },
   "claude-sonnet-5": {
@@ -27,38 +27,38 @@
     "pass": 20,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 2129
+    "median_latency_ms": 2377
    },
    "json_adherence": {
     "pass": 12,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 1805,
+    "median_latency_ms": 1394,
     "content_ok": 12
    },
    "in_tokens": 26885,
-   "out_tokens": 3462,
-   "run_cost_usd": 0.1326,
+   "out_tokens": 3700,
+   "run_cost_usd": 0.1362,
    "errors": 0
   },
   "claude-haiku-4-5": {
    "label": "Claude Haiku 4.5",
    "tool_calling": {
-    "pass": 20,
+    "pass": 19,
     "total": 20,
     "errors": 0,
-    "median_latency_ms": 846
+    "median_latency_ms": 991
    },
    "json_adherence": {
     "pass": 0,
     "total": 12,
     "errors": 0,
-    "median_latency_ms": 595,
+    "median_latency_ms": 774,
     "content_ok": 12
    },
    "in_tokens": 24666,
-   "out_tokens": 2808,
-   "run_cost_usd": 0.0387,
+   "out_tokens": 2670,
+   "run_cost_usd": 0.038,
    "errors": 0
   },
   "gemini-pro-latest": {
@@ -137,7 +137,7 @@
     }
    ],
    "text": "I'll check that for you.",
-   "latency_ms": 2391.4133310000025,
+   "latency_ms": 2558.1997040000033,
    "in_tokens": 1116,
    "out_tokens": 84,
    "score": {
@@ -162,10 +162,10 @@
      }
     }
    ],
-   "text": "I'll check that for you.",
-   "latency_ms": 2471.2728479999982,
+   "text": "",
+   "latency_ms": 2507.836769000001,
    "in_tokens": 1118,
-   "out_tokens": 86,
+   "out_tokens": 77,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -190,7 +190,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1522.9620560000044,
+   "latency_ms": 1923.8673370000042,
    "in_tokens": 1122,
    "out_tokens": 94,
    "score": {
@@ -217,7 +217,7 @@
     }
    ],
    "text": "I'll search for flights from Berlin (BER) to Lisbon (LIS) on that date.",
-   "latency_ms": 2931.1361469999965,
+   "latency_ms": 2904.9883290000053,
    "in_tokens": 1127,
    "out_tokens": 132,
    "score": {
@@ -244,10 +244,10 @@
      }
     }
    ],
-   "text": "I'll search for nonstop flights from Frankfurt to JFK on that date.",
-   "latency_ms": 1945.5704020000012,
+   "text": "I'll search for that flight.",
+   "latency_ms": 1846.4024170000002,
    "in_tokens": 1136,
-   "out_tokens": 152,
+   "out_tokens": 135,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -272,9 +272,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2593.9305799999984,
+   "latency_ms": 1367.1159730000043,
    "in_tokens": 1125,
-   "out_tokens": 109,
+   "out_tokens": 82,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -299,7 +299,7 @@
     }
    ],
    "text": "I'll query the orders database for you.",
-   "latency_ms": 2655.973611999997,
+   "latency_ms": 2037.9013200000031,
    "in_tokens": 1125,
    "out_tokens": 107,
    "score": {
@@ -325,7 +325,7 @@
     }
    ],
    "text": "I'll query the orders database with those filters.",
-   "latency_ms": 2072.0968000000044,
+   "latency_ms": 1560.941770999996,
    "in_tokens": 1121,
    "out_tokens": 94,
    "score": {
@@ -352,7 +352,7 @@
     }
    ],
    "text": "I'll convert that for you.",
-   "latency_ms": 1701.0311459999982,
+   "latency_ms": 1604.9409750000052,
    "in_tokens": 1116,
    "out_tokens": 111,
    "score": {
@@ -379,7 +379,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2449.2943120000064,
+   "latency_ms": 2387.857328000003,
    "in_tokens": 1121,
    "out_tokens": 117,
    "score": {
@@ -397,10 +397,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that Sydney or Melbourne is the capital. Canberra was purpose-built as a compromise between those two rival cities and became the seat of government in 1927. It's located in the Australian Capital Territory, inland between Sydney and Melbourne.",
-   "latency_ms": 2802.0834689999956,
+   "text": "The capital of Australia is **Canberra**.\n\nIt's a common misconception that Sydney or Melbourne is the capital \u2014 Canberra was purpose-built as a compromise between those two rival cities and officially became the capital in 1913. It's located in the Australian Capital Territory, roughly halfway between Sydney and Melbourne.",
+   "latency_ms": 2511.419445999998,
    "in_tokens": 1112,
-   "out_tokens": 104,
+   "out_tokens": 108,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -416,10 +416,10 @@
    "kind": "tool_calling",
    "case_id": "tc12",
    "calls": [],
-   "text": "100 \u00b0F is about **37.8 \u00b0C**.\n\nThe conversion is (\u00b0F \u2212 32) \u00d7 5/9 = (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78 \u00b0C \u2014 roughly human body temperature.",
-   "latency_ms": 3164.7805780000053,
+   "text": "100 \u00b0F is about **37.8 \u00b0C**.\n\nThe formula is: \u00b0C = (\u00b0F \u2212 32) \u00d7 5/9 \u2192 (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78 \u00b0C.\n\n(Fun fact: that's very close to normal human body temperature, ~37 \u00b0C.)",
+   "latency_ms": 3452.651396,
    "in_tokens": 1122,
-   "out_tokens": 160,
+   "out_tokens": 167,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -435,10 +435,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I can't book flights directly, but I can search for options \u2014 I just need a couple of details:\n\n1. **Departure airport** (city or IATA code, e.g. BER, LHR)\n2. **Travel date** (Tokyo has two airports \u2014 HND is closer to the city, NRT is the other major one; I can check either or both)\n3. Any preference on **max number of stops**?\n\nGive me those and I'll pull up what's available, then you can book through the airline or your preferred site.",
-   "latency_ms": 4966.651240000005,
+   "text": "I can search for flights, but I can't actually book them \u2014 and I need a couple of details first:\n\n1. **Where are you departing from?** (city or airport code)\n2. **What date?**\n3. Tokyo has two main airports \u2014 **Haneda (HND)** or **Narita (NRT)**, or should I check both?\n4. Any preference on **max number of stops**?\n\nGive me those and I'll pull up the options for you.",
+   "latency_ms": 2703.651810000004,
    "in_tokens": 1115,
-   "out_tokens": 230,
+   "out_tokens": 131,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -454,10 +454,10 @@
    "kind": "tool_calling",
    "case_id": "tc14",
    "calls": [],
-   "text": "I'm not able to do that \u2014 I don't have any tool that can modify or cancel orders. My access to the orders database is read-only (I can look orders up by customer email, status, or minimum total, but not change them).\n\nA couple of things I can do instead:\n\n- **Look up the order details** so you have them handy when you contact support \u2014 if you give me the email address on the order, I can pull up your pending orders and confirm #4711's status and total.\n- **Set a reminder** if there's a cancellation deadline you need to act before.\n\nTo actually cancel, you'll need to go through the store's account page or customer support directly. Want me to pull up the order details first?",
-   "latency_ms": 6246.209866999998,
+   "text": "I can't do that \u2014 I don't have any tool that modifies or cancels orders. My access to the orders database is read-only (I can filter by status, customer email, or minimum total, but there's no cancel action and no lookup by order number).\n\nA couple of options:\n\n- **You cancel it directly** in your account's order page, or by contacting the shop's support team \u2014 pending orders can usually still be cancelled there.\n- **I can look it up** for you first, if that's useful. If you give me the email on the order, I can pull your pending orders so you can confirm #4711 is still cancellable (and see its total) before you contact support.\n\nWant me to run that lookup?",
+   "latency_ms": 6076.6419149999965,
    "in_tokens": 1115,
-   "out_tokens": 372,
+   "out_tokens": 330,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -488,10 +488,10 @@
      }
     }
    ],
-   "text": "I'll check both cities for you.",
-   "latency_ms": 3207.5957700000044,
+   "text": "",
+   "latency_ms": 2438.127335000004,
    "in_tokens": 1125,
-   "out_tokens": 157,
+   "out_tokens": 146,
    "score": {
     "pass": true,
     "expected_n": 2,
@@ -524,7 +524,7 @@
     }
    ],
    "text": "I'll convert both amounts for you.",
-   "latency_ms": 2940.8651130000007,
+   "latency_ms": 2744.464442999998,
    "in_tokens": 1127,
    "out_tokens": 213,
    "score": {
@@ -541,10 +541,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I can't reliably work out what \"tomorrow\" is without knowing today's date, and the reminder needs an absolute date/time.\n\nWhat's today's date? And should I assume 9:00 AM for the dentist appointment?",
-   "latency_ms": 4442.423960999996,
+   "text": "I can set that up, but I need one detail first: the reminder tool takes an absolute date, and I don't have access to today's date. What's tomorrow's date (YYYY-MM-DD)?\n\nI'll assume 9:00 AM unless you meant 9:00 PM.",
+   "latency_ms": 3667.015894000002,
    "in_tokens": 1125,
-   "out_tokens": 244,
+   "out_tokens": 247,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -570,9 +570,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2206.108454999999,
+   "latency_ms": 2187.9394930000017,
    "in_tokens": 1132,
-   "out_tokens": 110,
+   "out_tokens": 111,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -598,9 +598,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2744.117872000004,
+   "latency_ms": 2323.7189549999966,
    "in_tokens": 1133,
-   "out_tokens": 147,
+   "out_tokens": 148,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -623,10 +623,10 @@
      }
     }
    ],
-   "text": "I'll check Oslo's weather \u2014 note my tool gives current conditions, not a forecast, but it's a good proxy.",
-   "latency_ms": 3420.099295,
+   "text": "I'll check Oslo's weather \u2014 note my tool gives current conditions, not tomorrow's forecast, but it's a reasonable proxy.",
+   "latency_ms": 2806.6306519999953,
    "in_tokens": 1130,
-   "out_tokens": 167,
+   "out_tokens": 163,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -640,10 +640,10 @@
    "model": "claude-opus-5",
    "kind": "json_adherence",
    "case_id": "js01",
-   "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.9}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.5}]}",
-   "latency_ms": 2051.7637839999948,
+   "text": "{\"invoice_id\":\"INV-2041\",\"vendor\":\"ACME GmbH\",\"date\":\"2026-07-03\",\"items\":[{\"name\":\"Widget A\",\"qty\":3,\"unit_price\":19.90},{\"name\":\"Widget B\",\"qty\":1,\"unit_price\":4.50}]}",
+   "latency_ms": 2107.7470410000033,
    "in_tokens": 357,
-   "out_tokens": 105,
+   "out_tokens": 95,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -660,7 +660,7 @@
    "kind": "json_adherence",
    "case_id": "js02",
    "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.9}",
-   "latency_ms": 2551.1528729999995,
+   "latency_ms": 1682.497646999998,
    "in_tokens": 250,
    "out_tokens": 28,
    "score": {
@@ -680,7 +680,7 @@
    "kind": "json_adherence",
    "case_id": "js03",
    "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
-   "latency_ms": 1381.1771589999964,
+   "latency_ms": 1357.8751820000007,
    "in_tokens": 224,
    "out_tokens": 60,
    "score": {
@@ -700,7 +700,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
-   "latency_ms": 2433.0254350000046,
+   "latency_ms": 2611.07913,
    "in_tokens": 231,
    "out_tokens": 60,
    "score": {
@@ -719,7 +719,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "{\"products\": [], \"sentiment\": \"positive\"}",
-   "latency_ms": 1046.8182870000007,
+   "latency_ms": 1048.7645959999982,
    "in_tokens": 198,
    "out_tokens": 19,
    "score": {
@@ -739,7 +739,7 @@
    "kind": "json_adherence",
    "case_id": "js06",
    "text": "{\"topic\":\"Q3 planning\",\"action_items\":[{\"owner\":\"Maria\",\"task\":\"Own the migration\",\"due\":\"Sept 30\"},{\"owner\":\"Tom\",\"task\":\"Own hiring\",\"due\":\"Oct 15\"}],\"decisions\":[\"Budget approved\",\"Next sync scheduled for Friday\"]}",
-   "latency_ms": 2374.8574720000024,
+   "latency_ms": 2157.593589000001,
    "in_tokens": 326,
    "out_tokens": 106,
    "score": {
@@ -759,7 +759,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
-   "latency_ms": 1677.5684130000031,
+   "latency_ms": 1715.8933080000054,
    "in_tokens": 216,
    "out_tokens": 22,
    "score": {
@@ -779,7 +779,7 @@
    "kind": "json_adherence",
    "case_id": "js08",
    "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
-   "latency_ms": 2763.483055000002,
+   "latency_ms": 3293.1624559999973,
    "in_tokens": 255,
    "out_tokens": 65,
    "score": {
@@ -798,7 +798,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side.\"], \"vegan\": false}",
-   "latency_ms": 2624.3772529999987,
+   "latency_ms": 2293.187209999999,
    "in_tokens": 269,
    "out_tokens": 75,
    "score": {
@@ -818,9 +818,9 @@
    "kind": "json_adherence",
    "case_id": "js10",
    "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
-   "latency_ms": 2763.978184000003,
+   "latency_ms": 2933.3727940000003,
    "in_tokens": 235,
-   "out_tokens": 84,
+   "out_tokens": 89,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -838,7 +838,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
-   "latency_ms": 2298.9037920000046,
+   "latency_ms": 2289.4739350000036,
    "in_tokens": 220,
    "out_tokens": 45,
    "score": {
@@ -858,7 +858,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
-   "latency_ms": 2381.3009539999966,
+   "latency_ms": 2290.8273479999934,
    "in_tokens": 281,
    "out_tokens": 41,
    "score": {
@@ -886,7 +886,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1777.8216499999999,
+   "latency_ms": 1998.2299039999987,
    "in_tokens": 1184,
    "out_tokens": 51,
    "score": {
@@ -912,7 +912,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1855.0850889999992,
+   "latency_ms": 1531.705973000001,
    "in_tokens": 1186,
    "out_tokens": 77,
    "score": {
@@ -939,9 +939,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2035.2584900000038,
+   "latency_ms": 1548.128757999997,
    "in_tokens": 1190,
-   "out_tokens": 94,
+   "out_tokens": 117,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -966,9 +966,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2199.1289059999986,
+   "latency_ms": 1495.8567149999951,
    "in_tokens": 1195,
-   "out_tokens": 154,
+   "out_tokens": 100,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -994,9 +994,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2412.106410999996,
+   "latency_ms": 2699.4610769999954,
    "in_tokens": 1204,
-   "out_tokens": 168,
+   "out_tokens": 174,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1021,9 +1021,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2157.9867979999963,
+   "latency_ms": 2953.2229870000037,
    "in_tokens": 1193,
-   "out_tokens": 82,
+   "out_tokens": 129,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1048,7 +1048,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1890.2849010000011,
+   "latency_ms": 2277.2130349999957,
    "in_tokens": 1193,
    "out_tokens": 95,
    "score": {
@@ -1074,7 +1074,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1993.1497760000027,
+   "latency_ms": 2388.8677560000033,
    "in_tokens": 1189,
    "out_tokens": 80,
    "score": {
@@ -1101,7 +1101,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2013.981998999995,
+   "latency_ms": 2366.0607669999936,
    "in_tokens": 1184,
    "out_tokens": 101,
    "score": {
@@ -1128,7 +1128,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2099.584942,
+   "latency_ms": 2475.0472149999964,
    "in_tokens": 1189,
    "out_tokens": 121,
    "score": {
@@ -1146,10 +1146,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**.\n\nMany people mistakenly assume it's Sydney or Melbourne, since those cities are larger and more internationally recognized, but Canberra was purpose-built to serve as the nation's capital. It was selected as a compromise between rival cities Sydney and Melbourne and officially became the capital in 1913, with construction of the city continuing over the following decades.",
-   "latency_ms": 2568.2002010000033,
+   "text": "The capital of Australia is **Canberra**.\n\nIt's often mistaken for Sydney or Melbourne since those cities are larger and more internationally recognized, but Canberra was purpose-built as the nation's capital and has served in that role since 1913, with the government officially moving there in 1927. It's located in the Australian Capital Territory (ACT), which is its own federal territory, separate from any state.\n\nLet me know if you'd like more details about Canberra or Australia in general!",
+   "latency_ms": 3896.1568319999956,
    "in_tokens": 1180,
-   "out_tokens": 130,
+   "out_tokens": 152,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1165,10 +1165,10 @@
    "kind": "tool_calling",
    "case_id": "tc12",
    "calls": [],
-   "text": "100\u00b0F is equal to approximately **37.78\u00b0C**.\n\nFormula: \u00b0C = (\u00b0F \u2212 32) \u00d7 5/9 = (100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78\u00b0C",
-   "latency_ms": 2712.0789739999937,
+   "text": "100\u00b0F converts to approximately **37.8\u00b0C**.\n\nThe formula used: (\u00b0F \u2212 32) \u00d7 5/9 = \u00b0C\n(100 \u2212 32) \u00d7 5/9 = 68 \u00d7 5/9 = 37.78\u00b0C",
+   "latency_ms": 2614.388934000004,
    "in_tokens": 1190,
-   "out_tokens": 123,
+   "out_tokens": 161,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1184,10 +1184,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I'd be happy to help you search for a flight to Tokyo! However, I need a bit more information to run the search:\n\n1. **Origin airport** \u2013 Which city/airport are you departing from? (please give the IATA code if you know it, e.g., BER for Berlin, JFK for New York)\n2. **Destination airport in Tokyo** \u2013 Tokyo has two main airports: **HND** (Haneda) or **NRT** (Narita). Do you have a preference, or should I check both?\n3. **Date of travel** \u2013 What date would you like to depart?\n4. **Stops** \u2013 Are you okay with connecting flights, or do you prefer nonstop only?\n\nOnce I have these details, I can search for available flights for you.\n\nPlease note: I can search for flight options, but I'm not able to actually complete a booking/purchase \u2014 I can help you find and compare flights so you can proceed with booking.",
-   "latency_ms": 3617.19772,
+   "text": "I'd be glad to help you search for a flight to Tokyo! However, I need a bit more information to run the search:\n\n1. **Origin airport** \u2013 Which city/airport will you be departing from? (Please provide the IATA code if you know it, e.g., JFK, LHR, etc., or just the city name.)\n2. **Destination in Tokyo** \u2013 Tokyo has two major airports: **NRT** (Narita) and **HND** (Haneda). Do you have a preference, or should I check both?\n3. **Date of travel** \u2013 What date would you like to depart?\n4. **Stops** \u2013 Are you open to layovers, or would you prefer a nonstop flight only?\n\nOnce I have these details, I can search for available flights for you. Also note: I can search for flight options, but actual booking/payment would need to be completed through the airline or a travel agent \u2014 I'll provide you the best options I find so you can proceed with booking.",
+   "latency_ms": 5415.303810999987,
    "in_tokens": 1183,
-   "out_tokens": 278,
+   "out_tokens": 288,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1203,10 +1203,10 @@
    "kind": "tool_calling",
    "case_id": "tc14",
    "calls": [],
-   "text": "I'm sorry, but I don't have a tool that can cancel or modify orders \u2014 my available tools only let me **look up** order information (via `query_orders`), not change order status.\n\nIf you'd like, I can:\n- Look up order #4711 to confirm its current status and details (though I'd need your email or other filters, as the lookup tool doesn't search by order number directly), or\n- Help you find the right support channel/process to request the cancellation.\n\nCould you tell me the email associated with the order so I can check its details for you?",
-   "latency_ms": 4108.636856999993,
+   "text": "I don't have the ability to directly cancel or modify orders \u2014 my available tools only let me *query* order data (search/filter orders), not change their status. So I can't cancel order #4711 for you.\n\nWhat I can do:\n- Look up order #4711 (or your orders by email) to confirm its current status and details.\n- Point you toward next steps if you tell me how you'd normally cancel (e.g., via a support email or account portal).\n\nWould you like me to query the order details first? If so, please share the customer email associated with the order (or any other identifying info), since search is by email/status/min total rather than order number directly.",
+   "latency_ms": 7158.5777269999935,
    "in_tokens": 1183,
-   "out_tokens": 264,
+   "out_tokens": 321,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1238,9 +1238,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2133.8686790000097,
+   "latency_ms": 3269.8251770000015,
    "in_tokens": 1193,
-   "out_tokens": 164,
+   "out_tokens": 172,
    "score": {
     "pass": true,
     "expected_n": 2,
@@ -1273,9 +1273,9 @@
     }
    ],
    "text": "",
-   "latency_ms": 2660.7974429999927,
+   "latency_ms": 2115.2943729999974,
    "in_tokens": 1195,
-   "out_tokens": 200,
+   "out_tokens": 218,
    "score": {
     "pass": true,
     "expected_n": 2,
@@ -1290,10 +1290,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I don't have access to today's date, so I can't calculate \"tomorrow\" automatically. Could you confirm the exact date for the appointment (e.g., 2025-05-16) at 9:00? Once you give me that, I'll set the reminder right away.",
-   "latency_ms": 3353.348577999995,
+   "text": "I'd be happy to set that reminder! However, I need to know the current date to calculate \"tomorrow\" correctly, since I don't have access to real-time date information.\n\nCould you tell me tomorrow's actual date? For example, if today is 2025-05-14, then tomorrow would be 2025-05-15, and I'd set the reminder for 2025-05-15T09:00.",
+   "latency_ms": 2949.9230929999953,
    "in_tokens": 1193,
-   "out_tokens": 232,
+   "out_tokens": 230,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1319,7 +1319,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1836.440720000013,
+   "latency_ms": 1366.1576469999943,
    "in_tokens": 1200,
    "out_tokens": 73,
    "score": {
@@ -1347,7 +1347,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 2124.1998050000034,
+   "latency_ms": 1477.9242299999992,
    "in_tokens": 1201,
    "out_tokens": 125,
    "score": {
@@ -1372,10 +1372,10 @@
      }
     }
    ],
-   "text": "",
-   "latency_ms": 2112.3823850000035,
+   "text": "I'll check the current weather conditions in Oslo to help you decide what to wear.",
+   "latency_ms": 2188.485713999995,
    "in_tokens": 1198,
-   "out_tokens": 131,
+   "out_tokens": 179,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -1390,7 +1390,7 @@
    "kind": "json_adherence",
    "case_id": "js01",
    "text": "{\"invoice_id\": \"INV-2041\", \"vendor\": \"ACME GmbH\", \"date\": \"2026-07-03\", \"items\": [{\"name\": \"Widget A\", \"qty\": 3, \"unit_price\": 19.90}, {\"name\": \"Widget B\", \"qty\": 1, \"unit_price\": 4.50}]}",
-   "latency_ms": 2014.8449080000005,
+   "latency_ms": 1423.1315440000003,
    "in_tokens": 357,
    "out_tokens": 105,
    "score": {
@@ -1408,8 +1408,8 @@
    "model": "claude-sonnet-5",
    "kind": "json_adherence",
    "case_id": "js02",
-   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.92}",
-   "latency_ms": 1692.916451000002,
+   "text": "{\"category\": \"performance\", \"urgency\": \"high\", \"confidence\": 0.9}",
+   "latency_ms": 1095.4261349999967,
    "in_tokens": 250,
    "out_tokens": 28,
    "score": {
@@ -1429,7 +1429,7 @@
    "kind": "json_adherence",
    "case_id": "js03",
    "text": "{\"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\", \"email\": \"jose.mueller@uni-berlin.de\", \"phone\": \"+49 30 1234567\"}",
-   "latency_ms": 1831.4136209999958,
+   "latency_ms": 2838.6071569999986,
    "in_tokens": 224,
    "out_tokens": 60,
    "score": {
@@ -1449,7 +1449,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "{\"recipient\": \"Anna Schmidt\", \"street\": \"Hauptstr. 5\", \"postal_code\": \"01099\", \"city\": \"Dresden\", \"country\": \"Germany\"}",
-   "latency_ms": 1219.2297019999928,
+   "latency_ms": 1131.0890160000042,
    "in_tokens": 231,
    "out_tokens": 60,
    "score": {
@@ -1468,7 +1468,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "{\"products\": [], \"sentiment\": \"positive\"}",
-   "latency_ms": 1779.5755629999944,
+   "latency_ms": 1305.9899640000053,
    "in_tokens": 198,
    "out_tokens": 19,
    "score": {
@@ -1488,7 +1488,7 @@
    "kind": "json_adherence",
    "case_id": "js06",
    "text": "{\"topic\": \"Q3 planning\", \"action_items\": [{\"owner\": \"Maria\", \"task\": \"migration\", \"due\": \"Sept 30\"}, {\"owner\": \"Tom\", \"task\": \"hiring\", \"due\": \"Oct 15\"}], \"decisions\": [\"Budget approved\", \"Next sync scheduled for Friday\"]}",
-   "latency_ms": 2008.562415,
+   "latency_ms": 1507.0773000000058,
    "in_tokens": 326,
    "out_tokens": 109,
    "score": {
@@ -1508,7 +1508,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "{\"tone_rating\": 1, \"is_constructive\": false}",
-   "latency_ms": 1659.7978259999877,
+   "latency_ms": 1710.616938000001,
    "in_tokens": 216,
    "out_tokens": 22,
    "score": {
@@ -1528,7 +1528,7 @@
    "kind": "json_adherence",
    "case_id": "js08",
    "text": "{\"timestamp\": \"2026-08-12T14:03:22Z\", \"level\": \"ERROR\", \"service\": \"payment-svc\", \"message\": \"Connection pool exhausted\", \"retries\": 3}",
-   "latency_ms": 1930.434715000004,
+   "latency_ms": 1365.558987,
    "in_tokens": 255,
    "out_tokens": 65,
    "score": {
@@ -1547,7 +1547,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "{\"name\": \"Grandma's pancakes\", \"ingredients\": [\"2 cups flour\", \"3 eggs\", \"a pinch of salt\"], \"steps\": [\"Fry 5 minutes per side.\"], \"vegan\": false}",
-   "latency_ms": 2588.285146000004,
+   "latency_ms": 1601.6785329999975,
    "in_tokens": 269,
    "out_tokens": 75,
    "score": {
@@ -1567,9 +1567,9 @@
    "kind": "json_adherence",
    "case_id": "js10",
    "text": "{\"lat\": 41.7258, \"lon\": -49.9458}",
-   "latency_ms": 1630.5247149999927,
+   "latency_ms": 1468.7738319999967,
    "in_tokens": 235,
-   "out_tokens": 90,
+   "out_tokens": 107,
    "score": {
     "pass": true,
     "strict_parse": true,
@@ -1587,7 +1587,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "{\"eu_members\": [\"Germany\", \"France\", \"Spain\"], \"non_eu\": [\"Switzerland\", \"Norway\"]}",
-   "latency_ms": 1636.1503349999964,
+   "latency_ms": 1050.4914630000003,
    "in_tokens": 220,
    "out_tokens": 45,
    "score": {
@@ -1607,7 +1607,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "{\"service\": \"ingest\", \"replicas\": 2, \"persistence\": false, \"port\": 8080, \"env\": \"prod\"}",
-   "latency_ms": 1869.7139490000013,
+   "latency_ms": 1188.816078000002,
    "in_tokens": 281,
    "out_tokens": 41,
    "score": {
@@ -1635,7 +1635,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 636.8791529999953,
+   "latency_ms": 982.5429540000101,
    "in_tokens": 1120,
    "out_tokens": 54,
    "score": {
@@ -1661,7 +1661,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 706.5147400000029,
+   "latency_ms": 795.7628839999984,
    "in_tokens": 1118,
    "out_tokens": 72,
    "score": {
@@ -1688,7 +1688,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 646.9279610000029,
+   "latency_ms": 809.1810800000019,
    "in_tokens": 1123,
    "out_tokens": 73,
    "score": {
@@ -1715,7 +1715,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 741.6635879999944,
+   "latency_ms": 1131.7051239999928,
    "in_tokens": 1128,
    "out_tokens": 95,
    "score": {
@@ -1743,7 +1743,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 857.7113930000024,
+   "latency_ms": 1034.3335810000126,
    "in_tokens": 1135,
    "out_tokens": 114,
    "score": {
@@ -1770,7 +1770,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 664.0167639999959,
+   "latency_ms": 813.1200330000041,
    "in_tokens": 1129,
    "out_tokens": 81,
    "score": {
@@ -1797,7 +1797,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 907.1733429999966,
+   "latency_ms": 975.2431540000117,
    "in_tokens": 1128,
    "out_tokens": 90,
    "score": {
@@ -1823,7 +1823,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 685.8374979999979,
+   "latency_ms": 819.2453279999938,
    "in_tokens": 1123,
    "out_tokens": 77,
    "score": {
@@ -1850,7 +1850,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 761.696723,
+   "latency_ms": 901.4310710000046,
    "in_tokens": 1121,
    "out_tokens": 92,
    "score": {
@@ -1877,7 +1877,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 975.9007170000018,
+   "latency_ms": 1399.855121999991,
    "in_tokens": 1123,
    "out_tokens": 95,
    "score": {
@@ -1895,10 +1895,10 @@
    "kind": "tool_calling",
    "case_id": "tc11",
    "calls": [],
-   "text": "The capital of Australia is **Canberra**.\n\nCanberra was purpose-built as the capital city in the early 20th century, located in the Australian Capital Territory (ACT). It was chosen as a compromise between rivals Sydney and Melbourne, and was designed by American architects Walter Burley Griffin and Marion Mahoney Griffin. The city was officially established in 1927 and is home to Australia's Parliament House and other important government institutions.",
-   "latency_ms": 1403.8885030000047,
+   "text": "The capital of Australia is **Canberra**. \n\nCanberra was purpose-built as the capital city and is located in the Australian Capital Territory (ACT). It was chosen as a compromise between rivals Sydney and Melbourne, and was designed by American architects Walter Burley Griffin and Marion Mahoney Griffin. The city was founded in 1913 and officially became the capital in 1927.",
+   "latency_ms": 1232.1392750000086,
    "in_tokens": 1117,
-   "out_tokens": 99,
+   "out_tokens": 90,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1913,15 +1913,24 @@
    "model": "claude-haiku-4-5",
    "kind": "tool_calling",
    "case_id": "tc12",
-   "calls": [],
-   "text": "I can help you convert that temperature. Let me use the currency converter tool, which also works for temperature conversions.\n\nActually, I should clarify - the currency converter tool I have access to is specifically for currency conversions (EUR, USD, etc.), not temperature conversions.\n\nHowever, I can tell you the conversion directly: **100\u00b0F is approximately 37.8\u00b0C**.\n\nThe formula is: \u00b0C = (\u00b0F - 32) \u00d7 5/9\n\nSo: (100 - 32) \u00d7 5/9 = 68 \u00d7 5/9 \u2248 37.78\u00b0C",
-   "latency_ms": 1389.416136999998,
+   "calls": [
+    {
+     "tool": "convert_currency",
+     "args": {
+      "amount": 100,
+      "from_currency": "fahrenheit",
+      "to_currency": "celsius"
+     }
+    }
+   ],
+   "text": "",
+   "latency_ms": 1025.4282360000104,
    "in_tokens": 1122,
-   "out_tokens": 141,
+   "out_tokens": 93,
    "score": {
-    "pass": true,
+    "pass": false,
     "expected_n": 0,
-    "actual_n": 0
+    "actual_n": 1
    },
    "tags": [
     "no-tool",
@@ -1933,10 +1942,10 @@
    "kind": "tool_calling",
    "case_id": "tc13",
    "calls": [],
-   "text": "I'd be happy to help you book a flight to Tokyo! However, I need a few more details:\n\n1. **Where are you flying from?** (Please provide the city or airport code, e.g., BER for Berlin, JFK for New York)\n2. **What date do you want to travel?** (Please provide in YYYY-MM-DD format, e.g., 2024-01-15)\n3. **Do you have any preference for the maximum number of stops?** (0 for direct flights, 1 for one stop, etc., or I can search without restrictions)\n\nOnce you provide these details, I can search for available flights for you.",
-   "latency_ms": 1309.2630479999912,
+   "text": "I'd be happy to help you book a flight to Tokyo! To search for available flights, I need a few more details:\n\n1. **Where are you flying from?** (city or airport code)\n2. **What date would you like to travel?** (YYYY-MM-DD format)\n3. **Do you have a preference for the number of stops?** (direct flight, maximum 1 stop, etc. - optional)\n\nOnce you provide these details, I can search for available flights for you.",
+   "latency_ms": 1152.1937830000013,
    "in_tokens": 1117,
-   "out_tokens": 153,
+   "out_tokens": 115,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1952,10 +1961,10 @@
    "kind": "tool_calling",
    "case_id": "tc14",
    "calls": [],
-   "text": "I don't have access to a function that can directly cancel orders. The tools available to me only allow me to query/view orders in the database, not modify or cancel them.\n\nTo cancel your order #4711, you'll need to:\n\n1. **Contact customer support** directly through your account or support portal\n2. **Call the customer service team** if that option is available\n3. **Check your account settings** to see if there's a self-service cancellation option for pending orders\n\nIf you'd like, I can help you query your orders to confirm the status of order #4711, but you'll need to reach out through your company's official channels to process the cancellation.",
-   "latency_ms": 1770.7012300000001,
+   "text": "I don't have the ability to cancel orders directly. The tools available to me only allow me to query/view order information, not to modify or cancel orders.\n\nTo cancel your pending order #4711, you would need to:\n\n1. **Contact customer support** - They can process the cancellation for you\n2. **Use your account portal** - If your service has a web interface, you may be able to cancel it there\n3. **Call the support team** - Speaking with someone directly often expedites cancellations\n\nIf you'd like, I can help you look up the details of your order #4711 to confirm its status, but you'll need to reach out through the proper support channels to actually cancel it.",
+   "latency_ms": 2208.6488580000037,
    "in_tokens": 1119,
-   "out_tokens": 150,
+   "out_tokens": 157,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -1987,7 +1996,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 887.1881390000027,
+   "latency_ms": 1089.608990000002,
    "in_tokens": 1125,
    "out_tokens": 124,
    "score": {
@@ -2022,7 +2031,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 1475.5596159999982,
+   "latency_ms": 1214.3503030000034,
    "in_tokens": 1130,
    "out_tokens": 170,
    "score": {
@@ -2039,10 +2048,10 @@
    "kind": "tool_calling",
    "case_id": "tc17",
    "calls": [],
-   "text": "I'd be happy to set a reminder for your dentist appointment tomorrow at 9 AM. However, I need to know today's date to calculate tomorrow's date. Could you please provide today's date or the specific date and time in ISO format (YYYY-MM-DDTHH:MM)?\n\nFor example, if today is January 15, 2024, tomorrow would be 2024-01-16T09:00.",
-   "latency_ms": 1026.8462440000121,
+   "text": "I'd be happy to set a reminder for your dentist appointment tomorrow at 9 AM. However, I need to know today's date to calculate tomorrow's date. Could you please provide today's date or the specific date you'd like the reminder for (in YYYY-MM-DD format)?",
+   "latency_ms": 931.0825279999904,
    "in_tokens": 1123,
-   "out_tokens": 97,
+   "out_tokens": 65,
    "score": {
     "pass": true,
     "expected_n": 0,
@@ -2067,10 +2076,10 @@
      }
     }
    ],
-   "text": "Ich werde nach allen gelieferten Bestellungen \u00fcber 200 Euro suchen.",
-   "latency_ms": 798.0426560000069,
+   "text": "Ich suche nach allen gelieferten Bestellungen \u00fcber 200 Euro.",
+   "latency_ms": 1000.2641580000073,
    "in_tokens": 1131,
-   "out_tokens": 95,
+   "out_tokens": 93,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -2096,7 +2105,7 @@
     }
    ],
    "text": "",
-   "latency_ms": 833.4887940000044,
+   "latency_ms": 935.9999449999918,
    "in_tokens": 1131,
    "out_tokens": 115,
    "score": {
@@ -2121,10 +2130,10 @@
      }
     }
    ],
-   "text": "I'll check the weather in Oslo for tomorrow so I can give you appropriate clothing recommendations.",
-   "latency_ms": 777.474368,
+   "text": "",
+   "latency_ms": 735.9443880000072,
    "in_tokens": 1125,
-   "out_tokens": 89,
+   "out_tokens": 71,
    "score": {
     "pass": true,
     "expected_n": 1,
@@ -2139,7 +2148,7 @@
    "kind": "json_adherence",
    "case_id": "js01",
    "text": "```json\n{\n  \"invoice_id\": \"INV-2041\",\n  \"vendor\": \"ACME GmbH\",\n  \"date\": \"2026-07-03\",\n  \"items\": [\n    {\n      \"name\": \"Widget A\",\n      \"qty\": 3,\n      \"unit_price\": 19.90\n    },\n    {\n      \"name\": \"Widget B\",\n      \"qty\": 1,\n      \"unit_price\": 4.50\n    }\n  ]\n}\n```",
-   "latency_ms": 765.3319110000041,
+   "latency_ms": 967.3139989999981,
    "in_tokens": 264,
    "out_tokens": 128,
    "score": {
@@ -2158,7 +2167,7 @@
    "kind": "json_adherence",
    "case_id": "js02",
    "text": "```json\n{\n  \"category\": \"performance\",\n  \"urgency\": \"high\",\n  \"confidence\": 0.95\n}\n```",
-   "latency_ms": 536.960181000012,
+   "latency_ms": 718.2024259999906,
    "in_tokens": 178,
    "out_tokens": 37,
    "score": {
@@ -2178,7 +2187,7 @@
    "kind": "json_adherence",
    "case_id": "js03",
    "text": "```json\n{\n  \"name\": \"Dr. Jos\u00e9 M\u00fcller-L\u00fcdenscheid\",\n  \"email\": \"jose.mueller@uni-berlin.de\",\n  \"phone\": \"+49 30 1234567\"\n}\n```",
-   "latency_ms": 579.1501530000005,
+   "latency_ms": 884.940608000008,
    "in_tokens": 163,
    "out_tokens": 61,
    "score": {
@@ -2198,7 +2207,7 @@
    "kind": "json_adherence",
    "case_id": "js04",
    "text": "```json\n{\n  \"recipient\": \"Anna Schmidt\",\n  \"street\": \"Hauptstr. 5\",\n  \"postal_code\": \"01099\",\n  \"city\": \"Dresden\",\n  \"country\": \"Germany\"\n}\n```",
-   "latency_ms": 630.1780480000048,
+   "latency_ms": 685.9108470000024,
    "in_tokens": 161,
    "out_tokens": 60,
    "score": {
@@ -2217,7 +2226,7 @@
    "kind": "json_adherence",
    "case_id": "js05",
    "text": "```json\n{\n  \"products\": [],\n  \"sentiment\": \"positive\"\n}\n```",
-   "latency_ms": 513.4058510000017,
+   "latency_ms": 631.7169689999957,
    "in_tokens": 135,
    "out_tokens": 25,
    "score": {
@@ -2236,10 +2245,10 @@
    "model": "claude-haiku-4-5",
    "kind": "json_adherence",
    "case_id": "js06",
-   "text": "```json\n{\n  \"topic\": \"Q3 planning\",\n  \"action_items\": [\n    {\n      \"owner\": \"Maria\",\n      \"task\": \"migration\",\n      \"due\": \"2024-09-30\"\n    },\n    {\n      \"owner\": \"Tom\",\n      \"task\": \"hiring\",\n      \"due\": \"2024-10-15\"\n    }\n  ],\n  \"decisions\": [\n    \"Budget approved\"\n  ]\n}\n```",
-   "latency_ms": 886.9709780000079,
+   "text": "```json\n{\n  \"topic\": \"Q3 planning\",\n  \"action_items\": [\n    {\n      \"owner\": \"Maria\",\n      \"task\": \"migration\",\n      \"due\": \"Sept 30\"\n    },\n    {\n      \"owner\": \"Tom\",\n      \"task\": \"hiring\",\n      \"due\": \"Oct 15\"\n    }\n  ],\n  \"decisions\": [\n    \"Budget approved\",\n    \"Next sync Friday\"\n  ]\n}\n```",
+   "latency_ms": 1038.323130000009,
    "in_tokens": 234,
-   "out_tokens": 118,
+   "out_tokens": 119,
    "score": {
     "pass": false,
     "strict_parse": false,
@@ -2257,7 +2266,7 @@
    "kind": "json_adherence",
    "case_id": "js07",
    "text": "```json\n{\"tone_rating\": 1, \"is_constructive\": false}\n```",
-   "latency_ms": 477.36214500000074,
+   "latency_ms": 548.709113000001,
    "in_tokens": 151,
    "out_tokens": 24,
    "score": {
@@ -2276,10 +2285,10 @@
    "model": "claude-haiku-4-5",
    "kind": "json_adherence",
    "case_id": "js08",
-   "text": "```json\n{\n  \"timestamp\": \"2026-08-12T14:03:22Z\",\n  \"level\": \"ERROR\",\n  \"service\": \"payment-svc\",\n  \"message\": \"Connection pool exhausted (retries=3)\",\n  \"retries\": 3\n}\n```",
-   "latency_ms": 639.0644870000131,
+   "text": "```json\n{\n  \"timestamp\": \"2026-08-12T14:03:22Z\",\n  \"level\": \"ERROR\",\n  \"service\": \"payment-svc\",\n  \"message\": \"Connection pool exhausted\",\n  \"retries\": 3\n}\n```",
+   "latency_ms": 935.8910419999944,
    "in_tokens": 179,
-   "out_tokens": 74,
+   "out_tokens": 69,
    "score": {
     "pass": false,
     "strict_parse": false,
@@ -2296,7 +2305,7 @@
    "kind": "json_adherence",
    "case_id": "js09",
    "text": "```json\n{\n  \"name\": \"Grandma's pancakes\",\n  \"ingredients\": [\n    \"2 cups flour\",\n    \"3 eggs\",\n    \"a pinch of salt\"\n  ],\n  \"steps\": [\n    \"Fry 5 minutes per side\"\n  ],\n  \"vegan\": false\n}\n```",
-   "latency_ms": 692.6171720000127,
+   "latency_ms": 840.9320489999885,
    "in_tokens": 190,
    "out_tokens": 86,
    "score": {
@@ -2315,10 +2324,10 @@
    "model": "claude-haiku-4-5",
    "kind": "json_adherence",
    "case_id": "js10",
-   "text": "```json\n{\"lat\": 41.7259, \"lon\": -49.9458}\n```",
-   "latency_ms": 477.9840059999998,
+   "text": "```json\n{\n  \"lat\": 41.7258,\n  \"lon\": -49.9458\n}\n```",
+   "latency_ms": 578.5097030000088,
    "in_tokens": 164,
-   "out_tokens": 26,
+   "out_tokens": 32,
    "score": {
     "pass": false,
     "strict_parse": false,
@@ -2336,7 +2345,7 @@
    "kind": "json_adherence",
    "case_id": "js11",
    "text": "```json\n{\n  \"eu_members\": [\"Germany\", \"France\", \"Spain\"],\n  \"non_eu\": [\"Switzerland\", \"Norway\"]\n}\n```",
-   "latency_ms": 610.8960030000077,
+   "latency_ms": 649.6723249999974,
    "in_tokens": 154,
    "out_tokens": 40,
    "score": {
@@ -2356,7 +2365,7 @@
    "kind": "json_adherence",
    "case_id": "js12",
    "text": "```json\n{\n  \"service\": \"ingest\",\n  \"replicas\": 2,\n  \"persistence\": false,\n  \"port\": 8080,\n  \"env\": \"prod\"\n}\n```",
-   "latency_ms": 565.4023470000027,
+   "latency_ms": 828.8897119999916,
    "in_tokens": 205,
    "out_tokens": 53,
    "score": {
